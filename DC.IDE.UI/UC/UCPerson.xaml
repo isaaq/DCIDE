@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="DC.IDE.UI.UC.UCPerson"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DC.IDE.UI.UC"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <telerik:RadGridView Margin="220,82,10,9.6">
+            
+        </telerik:RadGridView>
+        <telerik:RadTreeView HorizontalAlignment="Left" Margin="10,82,0,9.6"
+                 Width="185"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox"
+             VerticalAlignment="Top" Width="185"/>
+        <StackPanel Orientation="Horizontal" Margin="10,43,605,0" Height="23" VerticalAlignment="Top">
+            <telerik:RadRadioButton Width="90" Height="20" HorizontalAlignment="Left" Content="组织架构" IsChecked="True"/>
+            <telerik:RadRadioButton Width="90" Height="20" HorizontalAlignment="Left" Content="角色"/>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Margin="239,10,0,0" TextWrapping="Wrap" Text="TextBlock"
+               VerticalAlignment="Top" Height="23" FontSize="16"/>
+        <telerik:RadButton HorizontalAlignment="Left" Height="20" Margin="336,13,0,0" VerticalAlignment="Top" Width="85"
+                       Content="设置"/>
+    </Grid>
+</UserControl>

@@ -8,6 +8,7 @@ namespace DC.IDE.UI.Model
 {
     public class FuncItem
     {
-        public string Name { get; set; }
+        public string Id { get; set; }
+        public string Text { get; set; }
     }
 }

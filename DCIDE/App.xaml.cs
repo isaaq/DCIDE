@@ -13,5 +13,9 @@ namespace DCIDE
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            App.Current.Properties["Company"] = "5e955138e90140719b3f719e";
+        }
     }
 }

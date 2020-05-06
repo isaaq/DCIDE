@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DC.IDE.UI
+namespace DC.IDE.UI.Model.Field
 {
-    public class Class1
+    public class FieldLength
     {
+        public int Min { get; set; }
+        public int Max { get; set; }
     }
 }
