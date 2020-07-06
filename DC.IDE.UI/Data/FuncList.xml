@@ -5,4 +5,5 @@
   <item id="structs">模型与视图</item>
   <item id="datasources">数据源</item>
   <item id="sites">网站和子网站</item>
+  <item id="webparts">Webparts</item>
 </root>

@@ -7,7 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid x:Name="grid">
-        
+        <telerik:RadSplitContainer MaxWidth="679" telerik:DockingPanel.InitialSize="210,150"
+                    x:Name="RightContainer" InitialPosition="DockedRight">
+            <telerik:RadPaneGroup x:Name="Group2">
 
+                <!-- Solution Explorer -->
+
+                <!--Properties-->
+                <telerik:RadPane x:Name="Pane4" Header="Properties">
+                    <UC:UCPropertiesPane />
+                </telerik:RadPane>
+            </telerik:RadPaneGroup>
+        </telerik:RadSplitContainer>
     </Grid>
 </Window>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <item id="persons">人员和组织结构</item>
+  <item id="pages">页面管理</item>
+  <item id="structs">模型与视图</item>
+  <item id="datasources">数据源</item>
+  <item id="sites">网站和子网站</item>
+</root>

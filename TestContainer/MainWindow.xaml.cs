@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DC.IDE.UI.UC;
+using DC.IDE.UI.UC.PageList;
 using DC.IDE.UI.Util;
 using Telerik.Windows.Controls;
 
@@ -21,28 +22,24 @@ namespace TestContainer
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow 
     {
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainVM();
                         
-        }
-
-        private void RadTreeView_ItemClick(object sender, Telerik.Windows.RadRoutedEventArgs e)
-        {
-            var item = e.OriginalSource as RadTreeViewItem;
-            var uid = item.Uid;
-            if(uid != "")
-            {
-
-            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var uc = new UCModelField(new DC.IDE.UI.Model.StructItem() { ID = "5ea00e678b26d60db109009d".ToObjectId() });
-            grid.Children.Add(uc);
+ 
+        }
+
+        private void RadButton_Click(object sender, RoutedEventArgs e)
+        {
+            var addwin = new TestContainer.WindowA();
+            addwin.ShowDialog();
         }
     }
 }

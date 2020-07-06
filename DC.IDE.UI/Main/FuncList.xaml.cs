@@ -16,7 +16,7 @@ using Telerik.Windows.Controls.Primitives;
 
 namespace DC.IDE.UI.Main
 {
-    public partial class FuncList : UserControl, IComponentConnector
+    public partial class FuncList : UserControl
     {
         public event EventHandler<FuncItem> FuncChanged;
 

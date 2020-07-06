@@ -1,0 +1,334 @@
+﻿<UserControl x:Class="DC.IDE.UI.Main.FuncList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:DC.IDE.UI.Main"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ExpandablePanelBarItemTemplate" TargetType="{x:Type telerik:RadPanelBarItem}">
+            <Grid x:Name="RootElement" SnapsToDevicePixels="true">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Arrow"/>
+                                <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Header"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="MouseOverVisual"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOut"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="SelectionStates">
+                        <VisualState x:Name="Unselected"/>
+                        <VisualState x:Name="Selected">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectedVisual"/>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="ExpandStates">
+                        <VisualState x:Name="Expanded">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To="180" Storyboard.TargetProperty="Angle" Storyboard.TargetName="directionRotation"/>
+                                <DoubleAnimation Duration="0:0:0.2" From="0" To="1" Storyboard.TargetProperty="Opacity"
+                                 Storyboard.TargetName="ItemsContainer"/>
+                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ItemsContainer">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <ObjectKeyFrame.Value>
+                                            <Visibility>Visible</Visibility>
+                                        </ObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Collapsed"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisual">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <ObjectKeyFrame.Value>
+                                            <Visibility>Visible</Visibility>
+                                        </ObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Unfocused">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisual">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <ObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </ObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Grid x:Name="HeaderRow" UseLayoutRounding="true">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Border x:Name="NormalVisual" BorderBrush="{TemplateBinding Control.BorderBrush}"
+                  BorderThickness="{TemplateBinding Control.BorderThickness}"
+                  Background="{TemplateBinding Control.Background}" Grid.ColumnSpan="5" Margin="-1,0,-1,-1">
+                        <Border BorderBrush="White" BorderThickness="1" Background="{x:Null}"/>
+                    </Border>
+                    <Border x:Name="MouseOverVisual" BorderBrush="#FFFFC92B" BorderThickness="1" Grid.ColumnSpan="5"
+                  Margin="-1,0,-1,-1" Opacity="0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFFFBA3" Offset="1"/>
+                                <GradientStop Color="#FFFFFBDA" Offset="0"/>
+                                <GradientStop Color="#FFFFD25A" Offset="0.43"/>
+                                <GradientStop Color="#FFFEEBAE" Offset="0.42"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border BorderBrush="White" BorderThickness="1" Background="{x:Null}"/>
+                    </Border>
+                    <Border x:Name="SelectedVisual" BorderThickness="1" Grid.ColumnSpan="5" Margin="-1,0,-1,-1" Opacity="0">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF282828"/>
+                                <GradientStop Color="#FF5F5F5F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFFD74E" Offset="0.996"/>
+                                <GradientStop Color="#FFFFDCAB" Offset="0.17"/>
+                                <GradientStop Color="#FFFFB062" Offset="0.57"/>
+                                <GradientStop Color="#FFFFD18F" Offset="0.56"/>
+                                <GradientStop Color="#FFFFBA74"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border BorderThickness="1" Background="{x:Null}">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFB69A78"/>
+                                    <GradientStop Color="#FFFFE17A" Offset="0.126"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                        </Border>
+                    </Border>
+                    <Grid Column="5" HorizontalAlignment="Right" Margin="7,0" Opacity="1" RenderTransformOrigin="0.5,0.5"
+                VerticalAlignment="Center">
+                        <UIElement.RenderTransform>
+                            <RotateTransform x:Name="directionRotation" Angle="0"/>
+                        </UIElement.RenderTransform>
+                        <Path x:Name="Arrow" Style="{TemplateBinding telerik:RadTreeViewItem.ExpanderStyle}"/>
+                    </Grid>
+                    <ContentControl x:Name="Header" Grid.ColumnSpan="4"
+                          ContentTemplate="{TemplateBinding HeaderedItemsControl.HeaderTemplate}"
+                          Foreground="{TemplateBinding Control.Foreground}" FontWeight="{TemplateBinding Control.FontWeight}"
+                          FontSize="{TemplateBinding Control.FontSize}"
+                          HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                          Margin="{TemplateBinding Control.Padding}"
+                          VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"/>
+                    <Rectangle x:Name="FocusVisual" Grid.ColumnSpan="5" Grid.Column="0" IsHitTestVisible="false" Stroke="Black"
+                     StrokeThickness="1" StrokeDashArray="1 2" Visibility="Collapsed"/>
+                </Grid>
+                <Grid x:Name="ItemsContainer" Row="1" Visibility="Collapsed">
+                    <telerik:LayoutTransformControl x:Name="transformationRoot" IsTabStop="false">
+                        <ItemsPresenter/>
+                    </telerik:LayoutTransformControl>
+                </Grid>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="ItemsControl.HasItems" Value="false">
+                    <Setter TargetName="Arrow" Property="UIElement.Visibility" Value="Collapsed"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="NonExpandablePanelBarItemTemplate" TargetType="{x:Type telerik:RadPanelBarItem}">
+            <Grid x:Name="RootElement" SnapsToDevicePixels="true">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisual"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="Opacity"
+                                 Storyboard.TargetName="MouseOverVisual"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="MouseOut"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="SelectionStates">
+                        <VisualState x:Name="Unselected"/>
+                        <VisualState x:Name="Selected">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SelectedVisual"/>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="ExpandStates">
+                        <VisualState x:Name="Expanded">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ItemsContainer">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <ObjectKeyFrame.Value>
+                                            <Visibility>Visible</Visibility>
+                                        </ObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimation Duration="0:0:0.2" From="0" To="1" Storyboard.TargetProperty="Opacity"
+                                 Storyboard.TargetName="ItemsContainer"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Collapsed"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisual">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <ObjectKeyFrame.Value>
+                                            <Visibility>Visible</Visibility>
+                                        </ObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Unfocused">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisual">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <ObjectKeyFrame.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </ObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Grid x:Name="HeaderRow" Background="Transparent"
+              MinHeight="{TemplateBinding FrameworkElement.MinHeight}">
+                    <Border x:Name="MouseOverVisual" BorderBrush="#FFFFC92B" BorderThickness="1" CornerRadius="1" Opacity="0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFFFBA3" Offset="1"/>
+                                <GradientStop Color="#FFFFFBDA" Offset="0"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border BorderBrush="White" BorderThickness="1" CornerRadius="0" Background="{x:Null}"/>
+                    </Border>
+                    <Border x:Name="SelectedVisual" BorderBrush="#FFFFC92B" BorderThickness="1" CornerRadius="1" Opacity="0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFCE79F" Offset="1"/>
+                                <GradientStop Color="#FFFDD3A8"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border BorderBrush="White" BorderThickness="1" CornerRadius="0" Background="{x:Null}"/>
+                    </Border>
+                    <Border x:Name="DisabledVisual" BorderBrush="#FF989898" BorderThickness="1" Background="#FFE0E0E0"
+                  CornerRadius="1" Opacity="0">
+                        <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="0" Background="{x:Null}"/>
+                    </Border>
+                    <ContentControl x:Name="Header" ContentTemplate="{TemplateBinding HeaderedItemsControl.HeaderTemplate}"
+                          FontWeight="{TemplateBinding Control.FontWeight}"
+                          HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                          Margin="{TemplateBinding Control.Padding}"
+                          VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                          Foreground="{Binding Foreground, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                    <Rectangle x:Name="FocusVisual" IsHitTestVisible="false" RadiusY="2" RadiusX="2" Stroke="Black"
+                     StrokeThickness="1" StrokeDashArray="1 2" Visibility="Collapsed"/>
+                </Grid>
+                <Grid x:Name="ItemsContainer" Row="1" Visibility="Collapsed">
+                    <ItemsPresenter/>
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+        <Style TargetType="{x:Type telerik:RadPanelBarItem}">
+            <Setter Property="telerik:RadTreeViewItem.ExpanderStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type Path}">
+                        <Setter Property="Shape.Stretch" Value="None"/>
+                        <Setter Property="Path.Data" Value="M 1,1.5 L 4.5,5 8,1.5 "/>
+                        <Setter Property="Shape.StrokeThickness" Value="2"/>
+                        <Setter Property="Shape.Stroke" Value="Black"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="Local"/>
+            <Setter Property="UIElement.SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Control.Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="Gainsboro" Offset="0.43"/>
+                        <GradientStop Color="#FFADADAD" Offset="0.44"/>
+                        <GradientStop Color="#FFD4D4D4" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.Padding" Value="3"/>
+            <Setter Property="Control.BorderBrush" Value="#FF848484"/>
+            <Setter Property="Control.BorderThickness" Value="1"/>
+            <Setter Property="Control.HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Control.VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ItemsControl.ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <telerik:PanelBarPanel Panel.IsItemsHost="true"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.HasItems" Value="false">
+                    <Setter Property="Control.Template" Value="{StaticResource NonExpandablePanelBarItemTemplate}"/>
+                </Trigger>
+                <Trigger Property="ItemsControl.HasItems" Value="true">
+                    <Setter Property="Control.Template" Value="{StaticResource ExpandablePanelBarItemTemplate}"/>
+                </Trigger>
+                <Trigger Property="telerik:RadPanelBarItem.Level" Value="1">
+                    <Setter Property="Control.Template" Value="{StaticResource ExpandablePanelBarItemTemplate}"/>
+                </Trigger>
+                <Trigger Property="telerik:RadPanelBarItem.Level" Value="2">
+                    <Setter Property="Control.Padding" Value="6 3 3 3"/>
+                </Trigger>
+                <Trigger Property="telerik:RadPanelBarItem.Level" Value="3">
+                    <Setter Property="Control.Padding" Value="9 3 3 3"/>
+                </Trigger>
+                <Trigger Property="telerik:RadPanelBarItem.Level" Value="4">
+                    <Setter Property="Control.Padding" Value="12 3 3 3"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <telerik:RadPanelBar ExpandMode="Single" Margin="0">
+            <telerik:RadPanelBarItem IsExpanded="true" HeaderedItemsControl.Header="导航">
+                <telerik:RadListBox Margin="-5,0,0,0" DisplayMemberPath="Text" ItemsSource="{Binding FuncList}" SelectionChanged="RadListBox_SelectionChanged"/>
+            </telerik:RadPanelBarItem>
+            <telerik:RadPanelBarItem IsExpanded="true" HeaderedItemsControl.Header="2"/>
+        </telerik:RadPanelBar>
+    </Grid>
+</UserControl>

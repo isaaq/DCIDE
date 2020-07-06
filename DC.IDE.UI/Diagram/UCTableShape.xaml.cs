@@ -150,7 +150,7 @@ namespace DC.IDE.UI.Diagram
             }
             else
             {
-                TableModel tableModel = e.OldItems.ElementAt<object>(0) as TableModel;
+                DiagramTableModel tableModel = e.OldItems.ElementAt<object>(0) as DiagramTableModel;
                 if (tableModel != null)
                 {
                     foreach (NodeViewModelBase internalItem in (Collection<NodeViewModelBase>)tableModel.InternalItems)

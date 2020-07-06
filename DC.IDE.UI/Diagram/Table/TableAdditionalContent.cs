@@ -17,7 +17,7 @@ namespace DC.IDE.UI.Diagram.Table
   {
     protected override void OnContextItemChanged(object newValue, object oldValue)
     {
-      if (newValue is TableModel)
+      if (newValue is DiagramTableModel)
       {
         this.Visibility = Visibility.Visible;
         if (this.addRemove != null)
@@ -33,7 +33,7 @@ namespace DC.IDE.UI.Diagram.Table
 
     protected override void OnAdd()
     {
-      TableModel model = this.ContextItem as TableModel;
+      DiagramTableModel model = this.ContextItem as DiagramTableModel;
       if (model == null)
         return;
       RowModel itemToAdd = new RowModel()
@@ -46,7 +46,7 @@ namespace DC.IDE.UI.Diagram.Table
 
     protected override void OnCanRemove(CanExecuteRoutedEventArgs e)
     {
-      TableModel contextItem = this.ContextItem as TableModel;
+      DiagramTableModel contextItem = this.ContextItem as DiagramTableModel;
       if (contextItem == null || contextItem.InternalItems.Count <= 0)
         return;
       e.CanExecute = true;
@@ -54,14 +54,14 @@ namespace DC.IDE.UI.Diagram.Table
 
     protected override void OnRemove()
     {
-      TableModel model = this.ContextItem as TableModel;
+      DiagramTableModel model = this.ContextItem as DiagramTableModel;
       if (model == null || model.InternalItems.Count <= 0)
         return;
       NodeViewModelBase itemToRemove = model.InternalItems.LastOrDefault<NodeViewModelBase>();
       this.Diagram.UndoRedoService.ExecuteCommand((Telerik.Windows.Diagrams.Core.ICommand) new UndoableDelegateCommand("Add new row", (Action<object>) (o => this.RemoveRow(model, itemToRemove)), (Action<object>) (o => this.AddNewRow(model, itemToRemove)), (Predicate<object>) null), (object) null);
     }
 
-    private void AddNewRow(TableModel model, NodeViewModelBase itemToRemove)
+    private void AddNewRow(DiagramTableModel model, NodeViewModelBase itemToRemove)
     {
       if (model.IsCollapsed)
         model.IsCollapsed = false;
@@ -75,7 +75,7 @@ namespace DC.IDE.UI.Diagram.Table
         model.AddItem((object) itemToRemove);
     }
 
-    private void RemoveRow(TableModel model, NodeViewModelBase itemToRemove)
+    private void RemoveRow(DiagramTableModel model, NodeViewModelBase itemToRemove)
     {
       TablesGraphSource dataContext = this.DataContext as TablesGraphSource;
       if (dataContext != null && model != null && itemToRemove != null)

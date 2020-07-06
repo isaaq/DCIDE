@@ -181,7 +181,7 @@ namespace DC.IDE.UI.UC
             }
             else
             {
-                TableModel tableModel = e.OldItems.ElementAt<object>(0) as TableModel;
+                DiagramTableModel tableModel = e.OldItems.ElementAt<object>(0) as DiagramTableModel;
                 if (tableModel == null)
                     return;
                 foreach (NodeViewModelBase internalItem in (Collection<NodeViewModelBase>)tableModel.InternalItems)

@@ -4,8 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using DC.IDE.UI.Model.Field;
 using MongoDB.Bson;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Position;
+using ToastNotifications.Messages;
 
 namespace DC.IDE.UI.Util
 {
@@ -34,6 +39,26 @@ namespace DC.IDE.UI.Util
                     propertyInfo.SetValue(fi, ele.Value, null);
             }
             return fi;
+        }
+
+        public static Notifier GetNotify()
+        {
+            Notifier notifier = new Notifier(cfg =>
+            {
+                cfg.PositionProvider = new WindowPositionProvider(
+                    parentWindow: Application.Current.MainWindow,
+                    corner: Corner.TopRight,
+                    offsetX: 10,
+                    offsetY: 10);
+
+                cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(
+                    notificationLifetime: TimeSpan.FromSeconds(3),
+                    maximumNotificationCount: MaximumNotificationCount.FromCount(5));
+
+                cfg.Dispatcher = Application.Current.Dispatcher;
+            });
+
+            return notifier;
         }
     }
 }

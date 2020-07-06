@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DCIDE"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-        xmlns:ribbon="clr-namespace:DC.IDE.UI.Ribbon;assembly=DC.IDE.UI"
-        xmlns:Main="clr-namespace:DC.IDE.UI.Main;assembly=DC.IDE.UI" x:Class="DCIDE.MainWindow"
+        xmlns:ribbon="clr-namespace:DC.IDE.UI.Ribbon;assembly=DC.IDE.UI" xmlns:Main="clr-namespace:DC.IDE.UI.Main;assembly=DC.IDE.UI"
+        x:Class="DCIDE.MainWindow"
         Title="流云开发者工具"
-        mc:Ignorable="d" d:DesignWidth="1989" d:DesignHeight="1126">
+        mc:Ignorable="d" d:DesignWidth="1206" d:DesignHeight="640" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Resources>
 
@@ -55,111 +55,6 @@
                 <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
 
-            <ControlTemplate x:Key="CustomWatermarkTemplate" TargetType="{x:Type telerik:RadWatermarkTextBox}" >
-                <Grid x:Name="RootElement" Cursor="IBeam">
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="MouseOver">
-                                <Storyboard>
-                                    <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="MouseOverBorder"/>
-                                </Storyboard>
-                            </VisualState>
-                            <VisualState x:Name="Disabled">
-                                <Storyboard>
-                                    <DoubleAnimation Duration="0" To="0.3" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
-                                    <DoubleAnimation Duration="0" To="0.3" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Border"/>
-                                    <DoubleAnimation Duration="0" To="0.3" Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Opacity"/>
-                                </Storyboard>
-                            </VisualState>
-                            <VisualState x:Name="ReadOnly">
-                                <Storyboard>
-                                    <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderBrush">
-                                        <DiscreteObjectKeyFrame KeyTime="0">
-                                            <DiscreteObjectKeyFrame.Value>
-                                                <SolidColorBrush Color="Transparent"/>
-                                            </DiscreteObjectKeyFrame.Value>
-                                        </DiscreteObjectKeyFrame>
-                                    </ObjectAnimationUsingKeyFrames>
-                                </Storyboard>
-                            </VisualState>
-                        </VisualStateGroup>
-                        <VisualStateGroup x:Name="FocusStates">
-                            <VisualState x:Name="Focused">
-                                <Storyboard>
-                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Visibility">
-                                        <DiscreteObjectKeyFrame KeyTime="0:0:0">
-                                            <DiscreteObjectKeyFrame.Value>
-                                                <Visibility>Visible</Visibility>
-                                            </DiscreteObjectKeyFrame.Value>
-                                        </DiscreteObjectKeyFrame>
-                                    </ObjectAnimationUsingKeyFrames>
-                                </Storyboard>
-                            </VisualState>
-                            <VisualState x:Name="Unfocused">
-                                <Storyboard>
-                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
-                                </Storyboard>
-                            </VisualState>
-                        </VisualStateGroup>
-                        <VisualStateGroup x:Name="WatermarkStates">
-                            <VisualState x:Name="WatermarkHidden">
-                                <Storyboard>
-                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="WatermarkVisualElement"/>
-                                </Storyboard>
-                            </VisualState>
-                            <VisualState x:Name="WatermarkVisible"/>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                    <Border x:Name="Border"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}"
-                                Opacity="1"/>
-                    <Border x:Name="MouseOverBorder" BorderBrush="{telerik:Windows8Resource ResourceKey=StrongBrush}" Opacity="0" BorderThickness="{TemplateBinding BorderThickness}"/>
-                    <Border x:Name="DisabledVisualElement"
-                                BorderBrush="{telerik:Windows8Resource ResourceKey=BasicBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}"
-                                IsHitTestVisible="False"
-                                Opacity="0"/>
-                    <ScrollViewer x:Name="ContentElement"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                BorderThickness="0"
-                                Background="Transparent"
-                                IsTabStop="False"
-                                Padding="{TemplateBinding Padding}"
-                                Margin="{TemplateBinding BorderThickness}"
-                                Cursor="Arrow"/>
-                    <Border x:Name="FocusVisualElement"
-                                BorderBrush="{telerik:Windows8Resource ResourceKey=MarkerBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                IsHitTestVisible="False"
-                                Opacity="0.2"
-                                Visibility="Collapsed"/>
-                    <ContentControl x:Name="WatermarkVisualElement"
-                                IsTabStop="False"
-                                FontStyle="Italic" FontFamily="Segoe UI Semibold"
-                                Content="{TemplateBinding WatermarkContent}"
-                                ContentTemplate="{TemplateBinding WatermarkTemplate}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                IsHitTestVisible="False"
-                                Padding="{TemplateBinding Padding}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Margin="0 0 0 0"
-                                Foreground="{TemplateBinding Foreground}">
-                        <ContentControl.Template>
-                            <ControlTemplate TargetType="{x:Type ContentControl}">
-                                <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{x:Null}">
-                                    <ContentPresenter Margin="{TemplateBinding Padding}"/>
-                                </Border>
-                            </ControlTemplate>
-                        </ContentControl.Template>
-                    </ContentControl>
-                </Grid>
-            </ControlTemplate>
-
         </Grid.Resources>
 
         <Grid>
@@ -176,7 +71,11 @@
                 <telerik:RadMenuItem Header="BUILD" />
                 <telerik:RadMenuItem Header="DEBUG" />
             </StackPanel>-->
-            <ribbon:HomeRibbon  />
+            <telerik:RadMenu x:Name="radMenu" IsMainMenu="True" ClickToOpen="True" 
+                              Grid.Row="0">
+                <telerik:RadMenuItem Header="文件" />
+                <telerik:RadMenuItem Header="编辑" />
+            </telerik:RadMenu>
             <telerik:RadDocking x:Name="radDocking1" RetainPaneSizeMode="DockingAndFloating"
 									Grid.Row="1" Margin="0 0 0 10"
 									BorderThickness="0"
@@ -197,145 +96,11 @@
                 <telerik:RadSplitContainer  MaxWidth="600" telerik:DockingPanel.InitialSize="210,150"
                     x:Name="LeftContainer" InitialPosition="DockedLeft">
                     <telerik:RadPaneGroup x:Name="Group1">
-                        <!--Server Exproler-->
-                        <telerik:RadPane x:Name="Pane1" Header="Server Explorer">
-                            <Grid Margin="3 0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <StackPanel Orientation="Horizontal" Height="28" Margin="2 -1 0 0" VerticalAlignment="Center">
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="F1 M 24,13C 27.1521,13 29.9945,14.3258 32,16.4501L 32,11L 35,14L 35,22L 27,22L 24,19L 29.5903,19C 28.217,17.4656 26.2212,16.5 24,16.5C 20.1969,16.5 17.055,19.3306 16.5661,23L 13.0448,23C 13.5501,17.3935 18.262,13 24,13 Z M 24,31.5C 27.8031,31.5 30.945,28.6694 31.4339,25L 34.9552,25C 34.4499,30.6065 29.738,35 24,35C 20.8479,35 18.0055,33.6742 16,31.5499L 16,37L 13,34L 13,26L 21,26L 24,29L 18.4097,29C 19.783,30.5344 21.7787,31.5 24,31.5 Z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5" 
-											  Width="12" Height="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="M3.0000076,0.023987733 L3.0000076,5.023994 L9.0000219,5.023994 L9.0000219,0.023987733 L7.9999981,0.023987733 L7.9999981,3.0239856 L5.9999981,3.0239856 L5.9999981,0.023987733 z M0.21996991,0 L10.219995,0 L12.22,2.0000014 L12.22,12.000014 L3.0000076,12.000014 L3.0000076,12.024 L0,12.024 L0,0.023986276 L0.21996991,0.023986276 z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5"
-											  Width="12" Height="12" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadToolBarSeparator />
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="M 0,1 C0,1 0,12 0,12 0,12 15,12 15,12 15,12 15,1 15,1 15,1 6,1 6,1 6,1 6,0 6,0 6,0 1,0 1,0 1,0 1,1 1,1 1,1 0,1 0,1 z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5"
-											  Width="16" Height="12" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="M 10.,9. C6.,9. 3.,8. 3.,6. 3.,5. 6.,4. 10.,4. 14.,4. 17.,5. 17.,6. 17.,8. 14.,9. 10.,9. 10.,9. 10.,9. 10.,9. zM 10.,2. C6.,2. 1.,3. 1.,6. 1.,6. 1.,20. 1.,20. 1.,23. 6.,24. 10.,24. 14.,24. 19.,23. 19.,20. 19.,20. 19.,6. 19.,6. 19.,3. 14.,2. 10.,2. 10.,2. 10.,2. 10.,2. z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5"
-											  Width="11" Height="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="M0,14 L16,14 L16,16 L0,16 z M2.9999995,1.9999981 L2.9999995,7.999999 L13,7.999999 L13,1.9999981 z M1,0 L15,0 L15,10 L9,10 L9,11 L13,11 L13,13 L3,13 L3,11 L7,11 L7,10 L1,10 z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5"
-											  Width="16" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadToolBarSeparator />
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Grid Margin="4 0">
-                                            <Path Data="M 5,5 C5,5 5,7 5,7 5,7 4,7 4,7 4,7 4,14 4,14 4,14 14,14 14,14 14,14 14,6 14,6 14,6 10,2 10,2 10,2 7,2 7,2 7,2 7,4 7,4 7,4 10,4 10,4 10,4 10,6 10,6 10,6 12,6 12,6 12,6 12,12 12,12 12,12 6,12 6,12 6,12 6,5 6,5 6,5 5,5 5,5 z"
-												Fill="{StaticResource ToolbarForegroundBrush}"  Width="10" Height="12" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 2 0 0" />
-                                            <Path Data="M 2,0 C2,0 2,2 2,2 2,2 0,2 0,2 0,2 0,4 0,4 0,4 2,4 2,4 2,4 2,6 2,6 2,6 4,6 4,6 4,6 4,4 4,4 4,4 6,4 6,4 6,4 6,2 6,2 6,2 4,2 4,2 4,2 4,0 4,0 4,0 2,0 2,0 z"
-												Fill="{StaticResource GreenBrush}" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Top"
-												Width="6" Height="6" />
-                                        </Grid>
-                                    </telerik:RadButton>
-                                </StackPanel>
-                                <Main:FuncList Grid.Row="1" FuncChanged="FuncList_FuncChanged" />
-                                <!--<telerik:RadTreeView x:Name="ServerExplorerTreeView" Grid.Row="1" Margin="0 -2 0 0"
-												 VerticalAlignment="Stretch" Background="{StaticResource LightGrayBackgroundBrush}"
-												 IsLineEnabled="True" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-												 SelectionMode="Multiple" IsEditable="True" IsDragDropEnabled="True">
-                                    <telerik:RadTreeViewItem Header="Data Connections" IsExpanded="True"
-														 DefaultImageSrc="/Docking;component/Images/Docking/data.png"
-														 SelectedImageSrc="/Docking;component/Images/Docking/data_white.png">
-                                        <telerik:RadTreeViewItem Header="northwind.mdf" 
-															 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/database_connect.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/database_connect_white.png"/>
-                                        <telerik:RadTreeViewItem Header="Rodriges\sqlexpress.TradeCenter.dbo" 
-															 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/database_connect.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/database_connect_white.png"/>
-                                    </telerik:RadTreeViewItem>
-                                    <telerik:RadTreeViewItem Header="Servers" IsExpanded="True"
-														 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/servers.png"
-														 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/servers_white.png">
-                                        <telerik:RadTreeViewItem Header="Terry" 
-															 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/hristov.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/hristov_white.png"/>
-                                        <telerik:RadTreeViewItem Header="Crowther" DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/hristov.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/hristov_white.png"/>
-                                        <telerik:RadTreeViewItem Header="Brown" IsExpanded="True" 
-															 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/hristov.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/hristov_white.png">
-                                            <telerik:RadTreeViewItem Header="Event Logs" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/event_log.png"
-																 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/event_log_white.png"/>
-                                            <telerik:RadTreeViewItem Header="Management Classes" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/management_classes.png"
-																 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/management_classes_white.png"/>
-                                            <telerik:RadTreeViewItem Header="Management Events" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/event_log.png"
-																 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/event_log_white.png"/>
-                                            <telerik:RadTreeViewItem Header="Message Queues" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/message_queues.png"
-																 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/message_queues_white.png"/>
-                                            <telerik:RadTreeViewItem Header="Performance Counters" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/references.png"
-																 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/references_white.png"/>
-                                            <telerik:RadTreeViewItem Header="Services" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/ServerExplorer/services.png"
-																 SelectedImageSrc="/Docking;component/Images/Docking/ServerExplorer/services_white.png"/>
-                                        </telerik:RadTreeViewItem>
-                                    </telerik:RadTreeViewItem>
-                                </telerik:RadTreeView>-->
-
-                            </Grid>
+                        <telerik:RadPane x:Name="Pane1" Header="网站对象">
+                            <Main:UCFuncPane OnFuncChange="UCFuncPane_OnFuncChange"/>
                         </telerik:RadPane>
-
-                        <!--Toolbox-->
-                        <telerik:RadPane x:Name="Pane2" Header="Toolbox">
-                            <Grid Margin="3 0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-
-                                <Border Background="{StaticResource MainBrush}" BorderThickness="0"/>
-                                <telerik:RadWatermarkTextBox WatermarkContent="Search Toolbox" Padding="3" BorderThickness="0" Template="{StaticResource CustomWatermarkTemplate}" />
-
-                                <telerik:RadTreeView Margin="0 -2 0 0" Grid.Row="1"
-											 VerticalAlignment="Stretch"
-											 Background="{StaticResource LightGrayBackgroundBrush}"
-											 IsLineEnabled="False"
-											 SelectionMode="Multiple" IsEditable="True" IsDragDropEnabled="True">
-                                    <telerik:RadTreeViewItem Header="Telerik Input 2012 Q2" IsExpanded="true">
-                                        <telerik:RadTreeViewItem Header="RadPdfViewer" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/pdfviewer.png" />
-                                        <telerik:RadTreeViewItem Header="RadImageEditor" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/imageeditor.png" />
-                                        <telerik:RadTreeViewItem Header="RadRichTextBox" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/richtextbox.png" />
-                                    </telerik:RadTreeViewItem>
-
-                                    <telerik:RadTreeViewItem Header="Telerik Visualization 2012 Q2" IsExpanded="true">
-                                        <telerik:RadTreeViewItem Header="RadChartview" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/chartview.png" />
-                                        <telerik:RadTreeViewItem Header="RadTimeline" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/timeline.png" />
-                                        <telerik:RadTreeViewItem Header="RadTimebar" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/timebar.png" />
-                                        <telerik:RadTreeViewItem Header="RadMap" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/map.png" />
-                                        <telerik:RadTreeViewItem Header="RadAreaSparkline" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/sparklines.png" />
-                                        <telerik:RadTreeViewItem Header="RadColumnSparkline" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/sparklines.png" />
-                                        <telerik:RadTreeViewItem Header="RadLinearSparkline" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/sparklines.png" />
-                                        <telerik:RadTreeViewItem Header="RadScatterSparkline" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/sparklines.png" />
-                                        <telerik:RadTreeViewItem Header="RadWinLossSparkline" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/sparklines.png" />
-                                        <telerik:RadTreeViewItem Header="RadPivot" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/pivotgrid.png" />
-                                        <telerik:RadTreeViewItem Header="RadTreeMap" DefaultImageSrc="/Docking;component/Images/Docking/Toolbox/treemapandpivotmap.png" />
-                                    </telerik:RadTreeViewItem>
-
-                                    <telerik:RadTreeViewItem Header="Telerik Data 2012 Q2" IsExpanded="true">
-                                        <telerik:RadTreeViewItem Header="RadDataFilter" DefaultImageSrc="/Docking;component/Images/Toolbox/Toolbox/datafilter.png" />
-                                        <telerik:RadTreeViewItem Header="RadDataForm" DefaultImageSrc="/Docking;component/Images/Toolbox/Toolbox/dataform.png" />
-                                        <telerik:RadTreeViewItem Header="RadDataPager" DefaultImageSrc="/Docking;component/Images/Toolbox/Toolbox/datapager.png" />
-                                    </telerik:RadTreeViewItem>
-                                </telerik:RadTreeView>
-                            </Grid>
+                        <telerik:RadPane x:Name="Pane3" Header="菜单浏览器">
+                            <UC:UCMenuPane />
                         </telerik:RadPane>
                     </telerik:RadPaneGroup>
                 </telerik:RadSplitContainer>
@@ -345,234 +110,10 @@
                     <telerik:RadPaneGroup x:Name="Group2">
 
                         <!-- Solution Explorer -->
-                        <telerik:RadPane x:Name="Pane3" Header="Solution Explorer">
-                            <Grid Margin="3 0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <StackPanel Height="28" Orientation="Horizontal" Margin="2 -1 0 0" VerticalAlignment="Center">
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="M 29.,34. C29.,34. 22.,34. 22.,34. 22.,34. 22.,25. 22.,25. 22.,25. 17.,25. 17.,25. 17.,25. 17.,34. 17.,34. 17.,34. 9.,34. 9.,34. 9.,34. 9.,15. 9.,15. 9.,15. 19.,5. 19.,5. 19.,5. 29.,15. 29.,15. 29.,15. 29.,34. 29.,34. zM 39.,19. C39.,19. 32.,12. 32.,12. 32.,12. 32.,5. 32.,5. 32.,5. 28.,5. 28.,5. 28.,5. 28.,8. 28.,8. 28.,8. 19.,0. 19.,0. 19.,0. 0.,19. 0.,19. 0.,19. 3.,22. 3.,22. 3.,22. 5.,19. 5.,19. 5.,19. 5.,38. 5.,38. 5.,38. 33.,38. 33.,38. 33.,38. 33.,19. 33.,19. 33.,19. 36.,22. 36.,22. 36.,22. 39.,19. 39.,19. z"
-											Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" 
-											Width="12" Height="14" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="F1 M 24,13C 27.1521,13 29.9945,14.3258 32,16.4501L 32,11L 35,14L 35,22L 27,22L 24,19L 29.5903,19C 28.217,17.4656 26.2212,16.5 24,16.5C 20.1969,16.5 17.055,19.3306 16.5661,23L 13.0448,23C 13.5501,17.3935 18.262,13 24,13 Z M 24,31.5C 27.8031,31.5 30.945,28.6694 31.4339,25L 34.9552,25C 34.4499,30.6065 29.738,35 24,35C 20.8479,35 18.0055,33.6742 16,31.5499L 16,37L 13,34L 13,26L 21,26L 24,29L 18.4097,29C 19.783,30.5344 21.7787,31.5 24,31.5 Z"
-											Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5" 
-											Width="12" Height="14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Grid HorizontalAlignment="Left" Height="12" Margin="4 0" VerticalAlignment="Top" Width="14">
-                                            <Path Data="M2,1.0000001 L2,11 L12.999999,11 L12.999999,1.0000001 z M0,0 L2,0 L14,0 L14,1.0000001 L13.999999,11 L14,12 L12.999999,12 L2,12 L0,12 L0,11 L0,1.0000001 z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" />
-                                            <Path Data="M0,6.0000005 L5,6.0000005 L5,7.0000005 L0,7.0000005 z M2.000001,4 L7.000001,4 L7.000001,5 L2.000001,5 z M6.000001,2.0000007 L8.000001,2.0000007 L8.000001,3.0000007 L6.000001,3.0000007 z M2.000001,2.0000007 L5.000001,2.0000007 L5.000001,3.0000007 L2.000001,3.0000007 z M4.0000019,9.5367454E-07 L8.0000019,9.5367454E-07 L8.0000019,1.000001 L4.0000019,1.000001 z M0,0 L3,0 L3,1 L0,1 z" 
-											  Fill="{StaticResource DarkGrayBrush}" Margin="4 2 2 3" Stretch="Fill" />
-                                        </Grid>
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Grid HorizontalAlignment="Left" Height="12" Margin="4 0" VerticalAlignment="Top" Width="14">
-                                            <Path Data="M1,2 L1,11 L13,11 L13,2 z M0,0 L14,0 L14,12 L0,12 z" Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" />
-                                            <Path Data="M0,4.000001 L2,4.000001 L2,6.000001 L0,6.000001 z M4.0000014,4.000001 L10.000002,4.000001 L10.000002,6.000001 L4.0000014,6.000001 z M4.0000014,0 L10.000002,0 L10.000002,2 L4.0000014,2 z M5.9604656E-07,0 L2.0000007,0 L2.0000007,2 L5.9604656E-07,2 z" 
-											  Fill="{StaticResource ToolbarForegroundBrush}" Margin="2 3" Stretch="Fill" />
-                                        </Grid>
-                                    </telerik:RadButton>
-                                    <telerik:RadButton BorderThickness="0" Height="22">
-                                        <Path Data="M 23.,4. C23.,4. 18.,10. 18.,10. 18.,10. 13.,5. 13.,5. 13.,5. 19.,0. 19.,0. 18.,-0. 17.,-0. 16.,-0. 11.,-0. 7.,3. 7.,8. 7.,9. 7.,10. 8.,11. 8.,11. 1.,18. 1.,18. 1.,18. -0.,20. 1.,22. 3.,24. 5.,22. 5.,22. 5.,22. 12.,15. 12.,15. 13.,16. 14.,16. 16.,16. 20.,16. 24.,12. 24.,8. 24.,6. 24.,5. 23.,4. 23.,4. 23.,4. 23.,4. z"
-											Fill="{StaticResource ToolbarForegroundBrush}" Stretch="Fill" RenderTransformOrigin="0.5,0.5" 
-											Width="12" Height="12" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4 0" />
-                                    </telerik:RadButton>
-
-                                </StackPanel>
-                                <telerik:RadTreeView Grid.Row="1" Margin="0 -2 0 0" 
-												 VerticalAlignment="Stretch" Background="{StaticResource LightGrayBackgroundBrush}"
-												 IsLineEnabled="True" IsDragDropEnabled="True" SelectionMode="Multiple">
-                                    <telerik:RadTreeViewItem Header="Solution Telerik.Windows.Controls.All (4 projects)"  IsExpanded="True"
-															 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/namespace.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/namespace_white.png">
-                                        <telerik:RadTreeViewItem Header="Design" 
-															 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                        <telerik:RadTreeViewItem Header="Examples" IsExpanded="True" 
-															 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data.png"
-															 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data_white.png">
-                                            <telerik:RadTreeViewItem Header="Examples.CS" 
-																 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/icon1.png"
-																 IsExpanded="True">
-                                                <telerik:RadTreeViewItem Header="Properties" 
-																	 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/properties.png"
-																	 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/properties_white.png"/>
-                                                <telerik:RadTreeViewItem Header="References" 
-																	 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/references.png"
-																	 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/references_white.png"/>
-                                                <telerik:RadTreeViewItem Header="Bin" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/bin.png" />
-                                                <telerik:RadTreeViewItem Header="DataSources" 
-																	 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																	 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                <telerik:RadTreeViewItem Header="Examples" IsExpanded="True" 
-																	 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data.png"
-																	 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data_white.png">
-                                                    <telerik:RadTreeViewItem Header="Animation" 
-																		 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/bin.png" />
-                                                    <telerik:RadTreeViewItem Header="Calendar" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="ComboBox" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="Common" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="ContextMenu" IsExpanded="True" 
-																		 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data_white.png">
-                                                        <telerik:RadTreeViewItem Header="EventName" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                        <telerik:RadTreeViewItem Header="FirstLook" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                        <telerik:RadTreeViewItem Header="ModifierKey" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    </telerik:RadTreeViewItem>
-                                                    <telerik:RadTreeViewItem Header="CoverFlow" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="Cube" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="DatePicker" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="Docking" IsExpanded="True" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data_white.png">
-                                                        <telerik:RadTreeViewItem Header="FirstLook" IsExpanded="True" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/data_white.png">
-                                                            <telerik:RadTreeViewItem Header="Description.txt" 
-																				 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/enumeration.png"
-																				 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/enumeration_white.png"/>
-                                                            <telerik:RadTreeViewItem Header="ErrorList.png" 
-																				 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/image.png"
-																				 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/image_white.png"/>
-                                                            <telerik:RadTreeViewItem Header="Example.xaml" 
-																				 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/enumeration.png"
-																				 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/enumeration_white.png"/>
-                                                            <telerik:RadTreeViewItem Header="Outlook.png" 
-																				 DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/image.png"
-																				 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/image_white.png" />
-                                                        </telerik:RadTreeViewItem>
-                                                        <telerik:RadTreeViewItem Header="SimpelLayout" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                        <telerik:RadTreeViewItem Header="SplitContainers" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                        <telerik:RadTreeViewItem Header="UnpinnedPanes" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																			 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    </telerik:RadTreeViewItem>
-                                                    <telerik:RadTreeViewItem Header="DragAndDrop" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="Expander" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png" 
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="Gauge" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                    <telerik:RadTreeViewItem Header="GridView" DefaultImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder.png"
-																		 SelectedImageSrc="/Docking;component/Images/Docking/SolutionExplorer/folder_white.png"/>
-                                                </telerik:RadTreeViewItem>
-                                            </telerik:RadTreeViewItem>
-                                        </telerik:RadTreeViewItem>
-                                    </telerik:RadTreeViewItem>
-                                </telerik:RadTreeView>
-                            </Grid>
-                        </telerik:RadPane>
 
                         <!--Properties-->
-                        <telerik:RadPane x:Name="Pane4" Header="Properties">
-                            <Grid VerticalAlignment="Top" Margin="3 0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="23" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-
-                                <Grid Height="23" VerticalAlignment="Top">
-                                    <telerik:RadButton Margin="0 2 0 0" HorizontalAlignment="Left" BorderThickness="0" BorderBrush="{x:Null}">
-                                        <Grid Width="16" Height="13">
-                                            <Path Data="M8,7.6205708E-13 L10,7.6205708E-13 C10.034517,-2.980156E-08 10.068627,0.00087441405 10.102244,0.0025814176 L10.10292,0.0026024878 C11.159659,0.056168556 12,0.92994821 12,1.9999999 L14,1.9999999 L14,7 L11.73177,7 L11.710453,7.0370727 C11.359678,7.6143703 10.724874,8 10,8 L8,8 L4,8 C3.4477153,8 3,7.7761426 3,7.5 C3,7.2238574 3.4477153,7 4,7 L6.2682304,7 L6.2413893,6.9533186 C6.0874443,6.6699324 6,6.3451781 6,6 L3,6 C2.4477153,6 2,5.7761426 2,5.5 C2,5.2238574 2.4477153,5 3,5 L6,5 L6,4 L3,4 C2.4477153,4 2,3.7761424 2,3.5 C2,3.2238576 2.4477153,3 3,3 L6,3 C6,2.6548219 6.0874443,2.3300676 6.2413893,2.0466812 L6.2682304,1.9999999 L1,1.9999999 C0.44771528,2 0,1.7761424 0,1.4999999 C0,1.2238575 0.44771528,0.99999994 1,0.99999976 L7.9999914,0.99999976 L7.8977556,0.99741852 C7.3934999,0.97181356 7,0.75888348 7,0.49999997 C7,0.2238576 7.4477153,-2.980156E-08 8,7.6205708E-13 z" 
-													Margin="2 2 0 3" Fill="{StaticResource DarkGrayBrush}" Stretch="Fill"/>
-                                            <Path Data="M2,10 L5,10 L5,11 L2,11 z M2,8 L3,8 L3,9 L2,9 z M2,6 L3,6 L3,7 L2,7 z M0,0 L10,0 L10,1 L8,1 L8,2 L1,2 L1,12 L9,12 L9,11 L10,11 L10,13 L9,13 L0,13 L0,12 L0,2 L0,1 z" 
-													Margin="0 0 6 0" Fill="{StaticResource DarkGrayBrush}" Stretch="Fill" />
-                                        </Grid>
-                                    </telerik:RadButton>
-                                    <TextBlock Text="Source Control Server Properties" Margin="23 3 0 0" />
-                                </Grid>
-
-                                <StackPanel Orientation="Vertical" Grid.Row="1">
-                                    <telerik:RadToolBar>
-                                        <telerik:RadButton Width="24" Height="24">
-                                            <Path HorizontalAlignment="Center"
-										VerticalAlignment="Center"
-										Height="14"
-										Width="14"
-										Stretch="Fill"
-										Data="M 12,13 C12,13 12,14 12,14 12,14 14,14 14,14 14,14 14,13 14,13 14,13 12,13 12,13 zM 12,8 C12,8 12,9 12,9 12,9 14,9 14,9 14,9 14,8 14,8 14,8 12,8 12,8 zM 12,6 C12,6 12,7 12,7 12,7 14,7 14,7 14,7 14,6 14,6 14,6 12,6 12,6 zM 12,4 C12,4 12,5 12,5 12,5 14,5 14,5 14,5 14,4 14,4 14,4 12,4 12,4 zM 12,2 C12,2 12,3 12,3 12,3 14,3 14,3 14,3 14,2 14,2 14,2 12,2 12,2 zM 6,13 C6,13 6,14 6,14 6,14 11,14 11,14 11,14 11,13 11,13 11,13 6,13 6,13 zM 6,11 C6,11 6,12 6,12 6,12 11,12 11,12 11,12 11,11 11,11 11,11 6,11 6,11 zM 6,8 C6,8 6,9 6,9 6,9 11,9 11,9 11,9 11,8 11,8 11,8 6,8 6,8 zM 6,6 C6,6 6,7 6,7 6,7 11,7 11,7 11,7 11,6 11,6 11,6 6,6 6,6 zM 6,4 C6,4 6,5 6,5 6,5 11,5 11,5 11,5 11,4 11,4 11,4 6,4 6,4 zM 6,2 C6,2 6,3 6,3 6,3 11,3 11,3 11,3 11,2 11,2 11,2 6,2 6,2 zM 6,0 C6,0 6,1 6,1 6,1 11,1 11,1 11,1 11,0 11,0 11,0 6,0 6,0 zM 2,10 C2,10 3,10 3,10 3,10 3,11 3,11 3,11 4,11 4,11 4,11 4,12 4,12 4,12 3,12 3,12 3,12 3,13 3,13 3,13 2,13 2,13 2,13 2,12 2,12 2,12 1,12 1,12 1,12 1,11 1,11 1,11 2,11 2,11 2,11 2,10 2,10 zM 0,9 C0,9 0,14 0,14 0,14 5,14 5,14 5,14 5,9 5,9 5,9 0,9 0,9 zM 2,1 C2,1 3,1 3,1 3,1 3,2 3,2 3,2 4,2 4,2 4,2 4,3 4,3 4,3 3,3 3,3 3,3 3,4 3,4 3,4 2,4 2,4 2,4 2,3 2,3 2,3 1,3 1,3 1,3 1,2 1,2 1,2 2,2 2,2 2,2 2,1 2,1 zM 0,0 C0,0 0,5 0,5 0,5 5,5 5,5 5,5 5,0 5,0 5,0 0,0 0,0 z"
-										Fill="{StaticResource ToolbarForegroundBrush}" />
-                                        </telerik:RadButton>
-                                        <telerik:RadButton Width="24" Height="24">
-                                            <Grid HorizontalAlignment="Center" Height="14" VerticalAlignment="Center" Width="14">
-                                                <Path Margin="8 3 0 0"
-												HorizontalAlignment="Left"
-												VerticalAlignment="Top"
-												Height="8"
-												Width="6"
-												Stretch="Fill"
-												Data="M7.4161425,5.7221889 C7.4161425,5.7221889 4,10 4,10 C4,10 0.66716588,5.7221889 0.66716588,5.7221889 C0.66716588,5.7221889 0.66716588,3.7221889 0.66716588,3.7221889 C0.66716588,3.7221889 3,6 3,6 C3,6 3,0 3,0 C3,0 5,0 5,0 C5,0 5,6 5,6 C5,6 7.4157705,3.7221889 7.4157705,3.7221889 C7.4157705,3.7221889 7.4161425,5.7221889 7.4161425,5.7221889 z"
-												Fill="{StaticResource ToolbarForegroundBrush}" />
-                                                <Path Data="M0,0 L7,0 L7,7 L0,7 z" Fill="{StaticResource ToolbarForegroundBrush}" 
-												  HorizontalAlignment="Left" Height="7" Stretch="Fill" VerticalAlignment="Top" Width="7" />
-                                                <Path Data="M2.65625,3.8643227 C2.6328125,4.0127602 2.6067708,4.1299477 2.578125,4.2158852 L1.8085938,6.4502602 L3.5234375,6.4502602 L2.7460938,4.2158852 C2.7226563,4.1429687 2.6979165,4.0257812 2.671875,3.8643227 z M2.1640625,3.0322914 L3.2109375,3.0322914 L5.2929688,8.6338539 L4.2734375,8.6338539 L3.7695313,7.2080727 L1.5664063,7.2080727 L1.0820313,8.6338539 L0.066406265,8.6338539 z" 
-												  HorizontalAlignment="Left" Height="5" RenderTransformOrigin="0.5,0.5" Stretch="Fill" 
-												  VerticalAlignment="Top" Width="5">
-                                                    <Path.Fill>
-                                                        <SolidColorBrush Color="White">
-                                                            <SolidColorBrush.RelativeTransform>
-                                                                <MatrixTransform Matrix="Identity"/>
-                                                            </SolidColorBrush.RelativeTransform>
-                                                            <SolidColorBrush.Transform>
-                                                                <MatrixTransform Matrix="Identity"/>
-                                                            </SolidColorBrush.Transform>
-                                                        </SolidColorBrush>
-                                                    </Path.Fill>
-                                                    <Path.RenderTransform>
-                                                        <TransformGroup>
-                                                            <ScaleTransform/>
-                                                            <SkewTransform/>
-                                                            <RotateTransform/>
-                                                            <TranslateTransform/>
-                                                        </TransformGroup>
-                                                    </Path.RenderTransform>
-                                                </Path>
-                                                <Path Data="M0.37109375,5.7889843 L4.5898438,5.7889843 L4.5898438,6.550703 L2.2119141,9.651289 L4.609375,9.651289 L4.609375,10.788984 L0.12207031,10.788984 L0.12207031,10.149336 L2.6318359,6.9266796 L0.37109375,6.9266796 z" HorizontalAlignment="Left" 
-												  Height="5" Margin="1 0 0 0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" VerticalAlignment="Bottom" Width="5">
-                                                    <Path.Fill>
-                                                        <SolidColorBrush Color="#FF434647">
-                                                            <SolidColorBrush.RelativeTransform>
-                                                                <MatrixTransform Matrix="Identity"/>
-                                                            </SolidColorBrush.RelativeTransform>
-                                                            <SolidColorBrush.Transform>
-                                                                <MatrixTransform Matrix="Identity"/>
-                                                            </SolidColorBrush.Transform>
-                                                        </SolidColorBrush>
-                                                    </Path.Fill>
-                                                    <Path.RenderTransform>
-                                                        <TransformGroup>
-                                                            <ScaleTransform/>
-                                                            <SkewTransform/>
-                                                            <RotateTransform/>
-                                                            <TranslateTransform/>
-                                                        </TransformGroup>
-                                                    </Path.RenderTransform>
-                                                </Path>
-                                            </Grid>
-                                        </telerik:RadButton>
-
-                                        <telerik:RadWatermarkTextBox WatermarkContent="Search" VerticalAlignment="Center" 
-															  MinWidth="110" Template="{StaticResource CustomWatermarkTemplate}" />
-
-                                    </telerik:RadToolBar>
-                                    <TextBlock Text="Property editing not available" Margin="0 10 0 0"
-											HorizontalAlignment="Center" />
-                                </StackPanel>
-                            </Grid>
+                        <telerik:RadPane x:Name="Pane4" Header="属性">
+                            <UC:UCPropertiesPane />
                         </telerik:RadPane>
                     </telerik:RadPaneGroup>
                 </telerik:RadSplitContainer>

@@ -30,7 +30,7 @@ namespace DC.IDE.UI.Diagram.Table
       }
       else
       {
-        TableModel tableModel = node as TableModel;
+        DiagramTableModel tableModel = node as DiagramTableModel;
         if (tableModel != null)
         {
           info["Content"] = (object) tableModel.Content.ToString();
@@ -49,7 +49,7 @@ namespace DC.IDE.UI.Diagram.Table
       NodeViewModelBase nodeViewModelBase;
       if (shape is TableShape)
       {
-        TableModel tableModel = new TableModel();
+        DiagramTableModel tableModel = new DiagramTableModel();
         if (info["Content"] != null)
           tableModel.Content = (object) info["Content"].ToString();
         if (info["MyIsCollapsed"] != null)

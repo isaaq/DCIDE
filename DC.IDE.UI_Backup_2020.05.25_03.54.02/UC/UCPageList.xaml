@@ -1,0 +1,79 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DC.IDE.UI.UC"
+             xmlns:cv="clr-namespace:DC.IDE.UI.Converter"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="DC.IDE.UI.UC.UCPageList"
+             mc:Ignorable="d" 
+             d:DesignHeight="575" d:DesignWidth="800">
+    <UserControl.Resources>
+        <cv:CVBase64 x:Key="cvbase64" />
+
+    </UserControl.Resources>
+    <Grid>
+
+        <!--<telerik:RadListBox HorizontalAlignment="Left" Margin="10,10,0,10" Width="156" ItemsSource="{Binding PageList}" SelectedItem="{Binding SelItem,Mode=TwoWay}" DisplayMemberPath="Title">
+        </telerik:RadListBox>-->
+        <telerik:RadTreeView HorizontalAlignment="Left" Margin="10,151,0,10" Width="157" SelectedItem="{Binding SelItem, Mode=TwoWay}">
+            <telerik:RadTreeViewItem Header="页面" IsExpanded="True" ItemsSource="{Binding PageList}" DisplayMemberPath="Title">
+
+            </telerik:RadTreeViewItem>
+            <telerik:RadTreeViewItem Header="母版页" IsExpanded="True" ItemsSource="{Binding MasterList}" DisplayMemberPath="Title">
+
+            </telerik:RadTreeViewItem>
+        </telerik:RadTreeView>
+        <TextBox Margin="180,191,10,10" VerticalContentAlignment="Top" Text="{Binding SelItem.Content, Converter={StaticResource cvbase64}, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap"/>
+        <TextBox   HorizontalAlignment="Left" Height="23" Margin="180,151,0,0" TextWrapping="Wrap" Text="{Binding SelItem.Title}" VerticalAlignment="Top" Width="525"/>
+        <telerik:RadButton Content="Button" HorizontalAlignment="Left" Height="23" Margin="734,151,0,0" VerticalAlignment="Top" Width="56"/>
+        <telerik:RadRibbonView VerticalAlignment="Top" Margin="0" Height="135" Grid.RowSpan="2">
+            <telerik:RadRibbonTab Header="页面管理" >
+                <telerik:RadRibbonGroup Header="页面管理" telerik:ScreenTip.Title="页面管理"
+						DialogLauncherVisibility="Visible"
+						Icon="../Assets/Icons/icon_details.png">
+                    <telerik:RadCollapsiblePanel>
+                        <telerik:RadRibbonButton Size="Large" Text="添加页面" LargeImage="../Assets/Icons/icon_details.png"
+								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="page"/>
+                        <telerik:RadRibbonButton Size="Large" Text="添加母版页" LargeImage="../Assets/Icons/icon_details.png"
+								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="masterpage" />
+                        
+         <!--telerik:ScreenTip.Title="Cut"
+								telerik:ScreenTip.Description="Cut the selection from the document and put it on the Clipboard."
+								telerik:KeyTipService.AccessText="X"-->  
+        
+
+                    </telerik:RadCollapsiblePanel>
+                    <telerik:RadCollapsiblePanel>
+                        <telerik:RadRibbonButton Size="Large" Text="保存页面" LargeImage="../Assets/Icons/icon_details.png"
+								CollapseToSmall="WhenGroupIsMedium" Command="{Binding SavePageCommand}"/>
+                    </telerik:RadCollapsiblePanel>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="内容编辑" telerik:ScreenTip.Title="内容编辑">
+                    <telerik:RadCollapsiblePanel>
+                        <telerik:RadRibbonDropDownButton Text="插入元素" Size="Large"
+							telerik:ScreenTip.Title="插入元素" LargeImage="/DC.IDE.UI;component/Assets/Icons/icon_details.png">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadContextMenu BorderThickness="0">
+                                    <telerik:RadMenuItem Header="Paste" telerik:KeyTipService.AccessText="S" />
+                                    <telerik:RadMenuItem Header="Paste Special..." telerik:KeyTipService.AccessText="H"/>
+                                    <telerik:RadMenuItem Header="Paste as Hyperlink" IsEnabled="False" />
+                                </telerik:RadContextMenu>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                        <telerik:RadRibbonDropDownButton Text="插入组件" Size="Large"
+							telerik:ScreenTip.Title="插入元素" LargeImage="/DC.IDE.UI;component/Assets/Icons/icon_details.png">
+                            <telerik:RadRibbonDropDownButton.DropDownContent>
+                                <telerik:RadContextMenu BorderThickness="0">
+                                    <telerik:RadMenuItem Header="Paste" telerik:KeyTipService.AccessText="S" />
+                                    <telerik:RadMenuItem Header="Paste Special..." telerik:KeyTipService.AccessText="H"/>
+                                    <telerik:RadMenuItem Header="Paste as Hyperlink" IsEnabled="False" />
+                                </telerik:RadContextMenu>
+                            </telerik:RadRibbonDropDownButton.DropDownContent>
+                        </telerik:RadRibbonDropDownButton>
+                    </telerik:RadCollapsiblePanel>
+                </telerik:RadRibbonGroup>
+            </telerik:RadRibbonTab>
+        </telerik:RadRibbonView>
+    </Grid>
+</UserControl>
