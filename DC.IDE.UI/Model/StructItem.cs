@@ -12,7 +12,7 @@ namespace DC.IDE.UI.Model
         public ObjectId ID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
-        public string Count { get; set; }
+        public BsonArray Fields { get; set; }
         public DateTime ModifyTime { get; set; }
         public string Description { get; set; }
     }

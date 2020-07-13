@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DC.IDE.UI.Model.Field
 {
-    public class ChoiceFIeld : FieldItem
+    public class ChoiceField : FieldItem
     {
         public int ChoiceType { get; set; }
         public int ColumnWidth { get; set; }

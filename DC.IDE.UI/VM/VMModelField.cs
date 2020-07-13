@@ -6,11 +6,15 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+
 using DC.IDE.UI.Model;
 using DC.IDE.UI.Model.Field;
 using DC.IDE.UI.Util;
+
 using MongoDB.Bson;
+
 using PostSharp.Patterns.Model;
+
 using Telerik.Windows.Controls;
 
 namespace DC.IDE.UI.VM
@@ -31,7 +35,7 @@ namespace DC.IDE.UI.VM
             //var r = t.Find(t.Filter(f => f.Eq("_id", item.ID))).FirstOrDefault();
             //if (r != null)
             //{
-            var t2 = m.GetTable("tables");
+            var t2 = m.GetTable("sys_tables");
             var r = t2.Find(t2.Filter(f => f.Eq("_id", item.ID))).FirstOrDefault();
             if (r != null)
             {
@@ -45,21 +49,26 @@ namespace DC.IDE.UI.VM
                     }
                 }
             }
-            //}
-
         }
 
         public FieldItem BuildItem(int typeval)
         {
             var type = (FieldType)typeval;
             var fullName = Assembly.GetExecutingAssembly().GetName().Name;
-            var objectHandle = Activator.CreateInstance(fullName, fullName + ".Model.Field." + type.ToString() + "Field");
-            if (objectHandle != null)
+            try
             {
-                var fi = (FieldItem)objectHandle.Unwrap();
-                return fi;
+                var objectHandle = Activator.CreateInstance(fullName, fullName + ".Model.Field." + type.ToString() + "Field");
+                if (objectHandle != null)
+                {
+                    var fi = (FieldItem)objectHandle.Unwrap();
+                    return fi;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch(TypeLoadException e)
             {
                 return null;
             }

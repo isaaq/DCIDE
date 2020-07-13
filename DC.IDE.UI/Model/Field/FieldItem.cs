@@ -9,13 +9,17 @@ namespace DC.IDE.UI.Model.Field
     public abstract class FieldItem
     {
         /// <summary>
+        /// Id
+        /// </summary>
+        public Guid Id { get; set; }
+        /// <summary>
         /// 排序序号
         /// </summary>
         public int SortNum { get; set; }
         /// <summary>
         /// 字段名
         /// </summary>
-        public string FieldName { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// 显示名
         /// </summary>
@@ -70,5 +74,9 @@ namespace DC.IDE.UI.Model.Field
         public bool IsWithOmni { get; set; }
         public List<int> DenyGroupList { get; set; }
         public List<int> DenyRoleList { get; set; }
+        /// <summary>
+        /// 字段值
+        /// </summary>
+        public object Value { get; set; }
     }
 }

@@ -16,6 +16,7 @@ using MongoDB.Driver;
 using PostSharp.Patterns.Model;
 
 using Telerik.Windows.Controls;
+using Telerik.Windows.Controls.Data.PropertyGrid;
 
 using ToastNotifications.Messages;
 
@@ -69,9 +70,14 @@ namespace DC.IDE.UI.VM
                     Category = s["category"].AsString,
                     DataSources = s["datasources"].AsBsonArray,
                     ManagePageContent = s["managecontent"].AsString,
-                    PageContent = s["pagecontent"].AsString
-
+                    PageContent = s["pagecontent"].AsString,
+                    
                 }).ToList();
+                 
+                //foreach(var m in list)
+                //{
+                //    m[]
+                //}
                 var tempcoll = new ObservableCollection<WebPartPageModel>(list);
                 var item = new CategoryItem();
                 item.Name = name;
@@ -79,6 +85,13 @@ namespace DC.IDE.UI.VM
                 CategoryList.Add(item);
             }
 
+        }
+
+        private PropModel BuildPropList()
+        {
+            var pm = new PropModel();
+
+            return pm;
         }
 
         private void InsertForm(object obj)

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using DC.IDE.UI.Model;
 using DC.IDE.UI.UC;
+
 using Telerik.Windows.Controls;
 
 namespace DC.IDE.UI.Main
@@ -35,6 +36,7 @@ namespace DC.IDE.UI.Main
         {
             UserControl uc = null;
             var pane = new RadPane();
+            pane.Name = e.Id;
             pane.Header = e.Text;
             switch (e.Id)
             {
@@ -44,7 +46,7 @@ namespace DC.IDE.UI.Main
                 case "webparts": uc = new UCWebpartList(); break;
             }
             pane.Content = uc;
-            OnFuncChange(this, pane); 
+            OnFuncChange(this, pane);
         }
 
         private void MainWindow_ListItemClicked(object sender, StructItem e)
@@ -52,10 +54,12 @@ namespace DC.IDE.UI.Main
             var pane = new RadPane();
             pane.Header = string.Format("[{0}]{1}", e.Type, e.Name);
             UserControl uc = null;
+            if (e.Type == null)
+                e.Type = "0";
             switch (e.Type)
             {
-                case "0": uc = new UCModelField(e); ; break;
-                case "1": uc = new UCModelDetail(e); break;
+                case "0": uc = new UCModelField(e); pane.Name = "modelfield"; break;
+                case "1": uc = new UCModelDetail(e); pane.Name = "modeldetail"; break;
             }
             if (uc != null)
                 pane.Content = uc;

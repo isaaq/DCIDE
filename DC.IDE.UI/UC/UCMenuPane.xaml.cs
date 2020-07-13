@@ -44,14 +44,18 @@ namespace DC.IDE.UI.UC
             var all = tbl.Find(filter);
             if (all.Count == 0)
                 return new ObservableCollection<Model.MenuItem>();
-            var list = all.Select(s => new Model.MenuItem()
+            var list = new ObservableCollection<Model.MenuItem>();
+            foreach (var s in all)
             {
-                Name = s["title"].AsString,
-                Title = s["title"].AsString,
-                Namespace = s["namespace"].AsString,
-                Url = s["url"].AsString,
-                Children = GetList(s["_id"].ToString())
-            });
+                var mi = new Model.MenuItem();
+                mi.Name = s["title"].AsString;
+                mi.Title = s["title"].AsString;
+                mi.Namespace = s["namespace"].AsString;
+                if (s.Contains("url"))
+                    mi.Url = s["url"].AsString;
+                mi.Children = GetList(s["_id"].ToString());
+                list.Add(mi);
+            }
             return list;
         }
     }

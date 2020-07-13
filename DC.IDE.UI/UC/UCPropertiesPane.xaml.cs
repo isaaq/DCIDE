@@ -35,7 +35,8 @@ namespace DC.IDE.UI.UC
 
         private void RadPropertyGrid_AutoGeneratingPropertyDefinition(object sender, Telerik.Windows.Controls.Data.PropertyGrid.AutoGeneratingPropertyDefinitionEventArgs e)
         {
-            e.PropertyDefinition.GroupName = (Int32.Parse(e.PropertyDefinition.DisplayName.Substring(9)) % 1000).ToString();
+           // e.PropertyDefinition.GroupName = e.PropertyDefinition.DisplayName; //(Int32.Parse(e.PropertyDefinition.DisplayName.Substring(9)) % 1000).ToString();
+           //e.PropertyDefinition.
         }
     }
 }

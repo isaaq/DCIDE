@@ -225,5 +225,9 @@ namespace DC.IDE.UI.UC
             }), DispatcherPriority.ApplicationIdle);
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

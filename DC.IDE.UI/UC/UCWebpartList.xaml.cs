@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 using DC.IDE.UI.Model;
 using DC.IDE.UI.UC.PageList;
+using DC.IDE.UI.Util;
 using DC.IDE.UI.VM;
 
 using DCIDE.UI.VM;
@@ -43,13 +44,16 @@ namespace DC.IDE.UI.UC
             vmwebpart.ElementInserted += Vmpage_ElementInserted;
         }
 
-        private void ChangePropVM()
-        {
-            var parent = (FrameworkElement)VisualTreeHelper.GetParent(this);
-            var parentdc = (VMMain)parent.DataContext;
-
-            parentdc.PropList = vmwebpart.SelItem?.PropertyList;
-        }
+        //private void ChangePropVM()
+        //{
+        //    var parent = (FrameworkElement)VisualTreeHelper.GetParent(this);
+        //    if (parent != null)
+        //    {
+        //        var parentdc = (VMMain)parent.DataContext;
+        //        parentdc.PropList = vmwebpart.SelItem;//?.PropertyList;
+        //        parentdc.OnPropChange();
+        //    }
+        //}
 
         private void Vmpage_ElementInserted(object sender, int e)
         {
@@ -77,7 +81,12 @@ namespace DC.IDE.UI.UC
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            ChangePropVM();
+            this.ChangePropVM(vmwebpart.SelItem);
+        }
+
+        private void RadTreeView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.ChangePropVM(vmwebpart.SelItem);
         }
     }
 }

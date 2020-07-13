@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace DCIDE.UI.VM
     public class VMMain : ViewModelBase
     {
         public ObservableCollection<FuncItem> FuncList { get; set; }
-        public PropModel PropList { get; set; }
+        public object PropList { get; set; }
 
         public VMMain()
         {
@@ -28,11 +29,17 @@ namespace DCIDE.UI.VM
             }
 
 
-            PropList = new PropModel();
-            for (int i = 0; i < 20; i++)
-            {
-                PropList[string.Format("Property {0}", i)] = string.Format("Value {0}", i);
-            }
+            //var pm = new PropModel();
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    pm[string.Format("Property {0}", i)] = string.Format("Value {0}", i);
+            //}
+            //PropList = pm;
+        }
+
+        public void OnPropChange()
+        {
+            OnPropertyChanged("PropList");
         }
     }
 }

@@ -15,9 +15,9 @@
         </HierarchicalDataTemplate>
     </UserControl.Resources>
     <Grid>
-        <telerik:RadTreeView HorizontalAlignment="Left" Margin="10,151,0,10" Width="157" ItemsSource="{Binding CategoryList}"
+        <telerik:RadTreeView HorizontalAlignment="Left" Margin="-16,151,0,9.6" Width="157" ItemsSource="{Binding CategoryList}"
                              ItemTemplate="{StaticResource TopMenuTemplate}" VerticalAlignment="Stretch" IsLineEnabled="True"  
-                             IsDragDropEnabled="True" Background="White">
+                             IsDragDropEnabled="True" Background="White" SelectionChanged="RadTreeView_SelectionChanged">
             <interactivity:Interaction.Behaviors>
                 <behaviors:BindableSelectedItemBehavior SelectedItem="{Binding SelItem, Mode=TwoWay}" />
             </interactivity:Interaction.Behaviors>

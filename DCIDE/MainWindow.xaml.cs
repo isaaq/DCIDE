@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DC.IDE.UI.UC;
+using DC.IDE.UI.Util;
 using DC.IDE.UI.VM;
 using DCIDE.UI.VM;
 using Telerik.Windows.Controls;
@@ -32,7 +33,11 @@ namespace DCIDE
 
         private void UCFuncPane_OnFuncChange(object sender, RadPane pane)
         {
-            dockMain.AddItem(pane, Telerik.Windows.Controls.Docking.DockPosition.Center);
+            var foundPane = dockMain.FindVisualChild<RadPane>(pane.Name);
+            if (foundPane == null)
+                dockMain.AddItem(pane, Telerik.Windows.Controls.Docking.DockPosition.Center);
+            else
+                foundPane.IsSelected = true;
         }
     }
 }

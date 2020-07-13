@@ -32,6 +32,15 @@
 											Width="130" />
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}"
 											 />
+                <telerik:GridViewColumn Width="110">
+                    <telerik:GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <telerik:RadButton Content="编辑"
+											   Command="{Binding EditCommand}"
+											   CommandParameter="{Binding}" telerik:TouchManager.IsTouchHitTestVisible="False"/>
+                        </DataTemplate>
+                    </telerik:GridViewColumn.CellTemplate>
+                </telerik:GridViewColumn>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <telerik:RadTreeView Margin="10" ItemClick="RadTreeView_ItemClick">

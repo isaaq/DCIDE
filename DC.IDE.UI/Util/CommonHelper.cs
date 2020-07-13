@@ -11,6 +11,11 @@ using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Position;
 using ToastNotifications.Messages;
+using DCIDE.UI.VM;
+using System.Windows.Media;
+using PostSharp.Aspects.Advices;
+using System.Windows.Controls;
+using System.Dynamic;
 
 namespace DC.IDE.UI.Util
 {
@@ -35,8 +40,13 @@ namespace DC.IDE.UI.Util
             {
                 var name = Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(ele.Name);
                 var propertyInfo = type.GetProperty(name);
-                if(propertyInfo != null)
-                    propertyInfo.SetValue(fi, ele.Value, null);
+                if (propertyInfo != null)
+                {
+                    if(name == "Type")
+                        propertyInfo.SetValue(fi, (FieldType)ele.Value.AsInt32, null);
+                    else
+                        propertyInfo.SetValue(fi, ele.Value.AsString, null);
+                }
             }
             return fi;
         }
@@ -60,5 +70,16 @@ namespace DC.IDE.UI.Util
 
             return notifier;
         }
+        public static void ChangePropVM(this UserControl uc, object item)
+        {
+            var parent = (FrameworkElement)VisualTreeHelper.GetParent(uc);
+            if (parent != null)
+            {
+                var parentdc = (VMMain)parent.DataContext;
+                parentdc.PropList = item;
+                parentdc.OnPropChange();
+            }
+        }
+
     }
 }

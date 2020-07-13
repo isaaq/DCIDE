@@ -134,11 +134,10 @@
             <TextBlock Text="属性" Margin="23 3 0 0" />
         </Grid>
 
-        <telerik:RadPropertyGrid x:Name="propgrid" Grid.Row="1" DescriptionPanelVisibility="Collapsed" LabelColumnWidth="90"
-								 AutoGeneratingPropertyDefinition="RadPropertyGrid_AutoGeneratingPropertyDefinition"
+        <telerik:RadPropertyGrid x:Name="propgrid" Grid.Row="1" LabelColumnWidth="120"
+                                 AutoGeneratingPropertyDefinition="RadPropertyGrid_AutoGeneratingPropertyDefinition"
                                  telerik:PropertySet.ShouldAddNullForNonMatchingValues="True"
-                                 RenderMode="Flat"
-								 IsGrouped="True"
+               					 IsGrouped="True"
                                  Item="{Binding PropList}"/>
     </Grid>
 

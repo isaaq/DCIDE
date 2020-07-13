@@ -118,6 +118,7 @@
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="system.windows.controls.ribbon" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
@@ -280,7 +281,7 @@
     </Compile>
     <Compile Include="Model\BasePropModel.cs" />
     <Compile Include="Model\DynamicViewModelBase.cs" />
-    <Compile Include="Model\Field\ChoiceFIeld.cs" />
+    <Compile Include="Model\Field\ChoiceField.cs" />
     <Compile Include="Model\Field\DateTimeField.cs" />
     <Compile Include="Model\Field\DownloadField.cs" />
     <Compile Include="Model\Field\EditorField.cs" />
@@ -319,6 +320,7 @@
     <Compile Include="UC\PageList\WinPageAdd.xaml.cs">
       <DependentUpon>WinPageAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC\Properties\PropertyGridDataTemplateSelector.cs" />
     <Compile Include="UC\UCCompany.xaml.cs">
       <DependentUpon>UCCompany.xaml</DependentUpon>
     </Compile>

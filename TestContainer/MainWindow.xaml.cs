@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using DC.IDE.UI.UC;
 using DC.IDE.UI.UC.PageList;
 using DC.IDE.UI.Util;
+using DCIDE.UI.VM;
 using Telerik.Windows.Controls;
 
 namespace TestContainer
@@ -27,7 +28,7 @@ namespace TestContainer
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainVM();
+            this.DataContext = new VMMain();
                         
         }
 

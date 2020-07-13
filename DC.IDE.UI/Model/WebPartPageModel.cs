@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,17 +14,5 @@ namespace DC.IDE.UI.Model
     public class WebPartPageModel : BaseWebpartPropModel
     {
         public ObjectId Id { get; set; }
-        [SafeForDependencyAnalysis]
-        public PropModel PropertyList
-        {
-            get {
-                var pm = new PropModel();
-                foreach(var key in data.Keys)
-                {
-                    pm[key] = data["key"];
-                }
-                return pm;
-            }
-        }
     }
 }
