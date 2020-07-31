@@ -27,7 +27,7 @@
                 </Style>
             </telerik:RadTreeView.Resources>
         </telerik:RadTreeView>
-        <TextBox x:Name="txtContent" Margin="180,191,10,10" VerticalContentAlignment="Top" Text="{Binding SelItem.PageContent, Converter={StaticResource cvbase64}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+        <TextBox x:Name="txtContent" Margin="180,191,10,10" VerticalContentAlignment="Top" Text="{Binding SelItem.MainContent, Converter={StaticResource cvbase64}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  AcceptsReturn="True" TextWrapping="Wrap" SelectionChanged="TextBox_SelectionChanged"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="231,151,0,0" TextWrapping="Wrap" Text="{Binding SelItem.Name}" VerticalAlignment="Top" Width="559"/>
         <telerik:RadRibbonView VerticalAlignment="Top" Margin="0" Height="135" Grid.RowSpan="2">

@@ -246,7 +246,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\RibbonCommand.cs" />
+    <Compile Include="Converter\FieldTypeToNameConverter.cs" />
     <Compile Include="Converter\CVBase64.cs" />
+    <Compile Include="Converter\CVFieldType.cs" />
     <Compile Include="Data\ListSampleVM.cs" />
     <Compile Include="Diagram\Table\AdditionalContent.cs" />
     <Compile Include="Diagram\Table\AttachedProperties.cs" />
@@ -291,6 +293,7 @@
     <Compile Include="Model\Field\ImageField.cs" />
     <Compile Include="Model\Field\ImageListField.cs" />
     <Compile Include="Model\Field\LinkageMenuField.cs" />
+    <Compile Include="Model\Field\ListField.cs" />
     <Compile Include="Model\Field\MapField.cs" />
     <Compile Include="Model\Field\OmniField.cs" />
     <Compile Include="Model\Field\TextAreaField.cs" />
@@ -321,6 +324,9 @@
       <DependentUpon>WinPageAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC\Properties\PropertyGridDataTemplateSelector.cs" />
+    <Compile Include="UC\Properties\UCFieldTypeDropDownSelector.xaml.cs">
+      <DependentUpon>UCFieldTypeDropDownSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCCompany.xaml.cs">
       <DependentUpon>UCCompany.xaml</DependentUpon>
     </Compile>
@@ -360,6 +366,7 @@
     <Compile Include="Util\SingletonProvider.cs" />
     <Compile Include="Util\XmlHelper.cs" />
     <Compile Include="VM\IRequestCloseViewModel.cs" />
+    <Compile Include="VM\VMFieldTypeDropDownSelector.cs" />
     <Compile Include="VM\VMMain.cs" />
     <Compile Include="VM\VMModelField.cs" />
     <Compile Include="VM\VMPage.cs" />
@@ -398,6 +405,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UC\PageList\WinPageAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\Properties\UCFieldTypeDropDownSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

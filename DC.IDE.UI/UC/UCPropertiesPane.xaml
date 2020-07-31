@@ -137,7 +137,7 @@
         <telerik:RadPropertyGrid x:Name="propgrid" Grid.Row="1" LabelColumnWidth="120"
                                  AutoGeneratingPropertyDefinition="RadPropertyGrid_AutoGeneratingPropertyDefinition"
                                  telerik:PropertySet.ShouldAddNullForNonMatchingValues="True"
-               					 IsGrouped="True"
+               					 IsGrouped="True" PropertySetValueChanged="propgrid_PropertySetValueChanged"
                                  Item="{Binding PropList}"/>
     </Grid>
 

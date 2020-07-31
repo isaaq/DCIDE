@@ -66,7 +66,7 @@ namespace DC.IDE.UI.VM
                 var item = new StructItem();
                 item.ID = i["_id"].AsObjectId;
                 item.Name = i["name"].ToString();
-                item.Fields = i["fields"].AsBsonArray;
+                item.Fields = i["attribute"].AsBsonArray;
                 if (i.Contains("modifytime"))
                     item.ModifyTime = i["modifytime"].ToLocalTime();
                 if (i.Contains("type"))

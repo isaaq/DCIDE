@@ -70,7 +70,7 @@ namespace DC.IDE.UI.VM
                     Category = s["category"].AsString,
                     DataSources = s["datasources"].AsBsonArray,
                     ManagePageContent = s["managecontent"].AsString,
-                    PageContent = s["pagecontent"].AsString,
+                    MainContent = s["maincontent"].AsString,
                     
                 }).ToList();
                  
@@ -99,11 +99,11 @@ namespace DC.IDE.UI.VM
             var win = new InsertFormWindow();
             win.ShowDialog();
             var content = win.InsertContent;
-            var cntbyte = Convert.FromBase64String(SelItem.PageContent);
+            var cntbyte = Convert.FromBase64String(SelItem.MainContent);
             var cnt = Encoding.UTF8.GetString(cntbyte);
             var pos = CurrentPosition;
             cnt = cnt.Substring(0, CurrentPosition) + content + cnt.Substring(CurrentPosition);
-            SelItem.PageContent = Convert.ToBase64String(Encoding.UTF8.GetBytes(cnt));
+            SelItem.MainContent = Convert.ToBase64String(Encoding.UTF8.GetBytes(cnt));
             ElementInserted(this, pos + content.Length);
         }
 
@@ -135,7 +135,7 @@ namespace DC.IDE.UI.VM
             var tbl = db.GetTable("sys_webparts");
             var document = new BsonDocument();
             document["name"] = SelItem.Name;
-            document["pagecontent"] = SelItem.PageContent ?? "";
+            document["maincontent"] = SelItem.MainContent ?? "";
             tbl.InsertOne(document);
 
             Close();
@@ -149,7 +149,7 @@ namespace DC.IDE.UI.VM
                 var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
                 var tbl = db.GetTable("sys_webparts");
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", SelItem.Id);
-                var update = Builders<BsonDocument>.Update.Set("name", SelItem.Name).Set("content", SelItem.PageContent);
+                var update = Builders<BsonDocument>.Update.Set("name", SelItem.Name).Set("content", SelItem.MainContent);
                 var result = tbl.UpdateOne(filter, update);
                 if (result.ModifiedCount > 0 || result.MatchedCount > 0)
                 {

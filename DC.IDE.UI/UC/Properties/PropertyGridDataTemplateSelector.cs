@@ -20,7 +20,7 @@ namespace DC.IDE.UI.UC.Properties
         {
             if (item as PropertyDefinition != null && (item as PropertyDefinition).SourceProperty.PropertyType == typeof(Int32))
             {
-                return IntegerPropertyDataTemplate;
+                return DataTemplate;
             }
             if (item as PropertyDefinition != null && (item as PropertyDefinition).SourceProperty.Name == "LastName")
             {
@@ -29,7 +29,7 @@ namespace DC.IDE.UI.UC.Properties
             return null;
         }
 
-        public DataTemplate IntegerPropertyDataTemplate { get; set; }
+        public DataTemplate DataTemplate { get; set; }
         public DataTemplate LastNameDataTemplate { get; set; }
     }
 }

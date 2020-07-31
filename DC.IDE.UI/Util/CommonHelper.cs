@@ -42,8 +42,11 @@ namespace DC.IDE.UI.Util
                 var propertyInfo = type.GetProperty(name);
                 if (propertyInfo != null)
                 {
-                    if(name == "Type")
-                        propertyInfo.SetValue(fi, (FieldType)ele.Value.AsInt32, null);
+                    if (name == "Type")
+                    {
+                        var rettype = (FieldType)Enum.Parse(typeof(FieldType), ele.Value.AsString, true);
+                        propertyInfo.SetValue(fi, rettype, null);
+                    }
                     else
                         propertyInfo.SetValue(fi, ele.Value.AsString, null);
                 }

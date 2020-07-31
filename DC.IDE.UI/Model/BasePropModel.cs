@@ -28,7 +28,7 @@ namespace DC.IDE.UI.Model
         public int DynamicPropertiesCount { get { return this.data.Count; } }
 
         public string ManagePageContent { get; set; }
-        public string PageContent { get; set; }
+        public string MainContent { get; set; }
 
         /// <summary>
         /// 工具栏按钮

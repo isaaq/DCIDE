@@ -33,6 +33,7 @@ namespace DC.IDE.UI.Model.Field
         Map,
         Omnipotent,
         Audio,
-        Video
+        Video,
+        List
     }
 }

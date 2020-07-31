@@ -39,9 +39,9 @@ namespace DC.IDE.UI.VM
             var r = t2.Find(t2.Filter(f => f.Eq("_id", item.ID))).FirstOrDefault();
             if (r != null)
             {
-                foreach (var i in r["fields"].AsBsonArray)
+                foreach (var i in r["attribute"].AsBsonArray)
                 {
-                    var fi = BuildItem(i["type"].AsInt32);
+                    var fi = BuildItem(i["type"].AsString);
                     if (fi != null)
                     {
                         fi.FillFieldItem(i.AsBsonDocument);
@@ -49,6 +49,18 @@ namespace DC.IDE.UI.VM
                     }
                 }
             }
+        }
+
+        public FieldItem BuildItem(string typestr)
+        {
+            //var strs = Enum.GetNames(typeof(FieldType));
+            //for (var i = 0; i < strs.Length; i++)
+            //{
+            //    if (strs[i].ToLower() == typestr)
+            //        return BuildItem(i);
+            //}
+            var val = (int)Enum.Parse(typeof(FieldType), typestr, true);
+            return BuildItem(val);
         }
 
         public FieldItem BuildItem(int typeval)

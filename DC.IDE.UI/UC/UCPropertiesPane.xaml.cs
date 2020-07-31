@@ -38,5 +38,10 @@ namespace DC.IDE.UI.UC
            // e.PropertyDefinition.GroupName = e.PropertyDefinition.DisplayName; //(Int32.Parse(e.PropertyDefinition.DisplayName.Substring(9)) % 1000).ToString();
            //e.PropertyDefinition.
         }
+
+        private void propgrid_PropertySetValueChanged(object sender, Telerik.Windows.Controls.Data.PropertyGrid.PropertySetValueChangedEventArgs e)
+        {
+
+        }
     }
 }
