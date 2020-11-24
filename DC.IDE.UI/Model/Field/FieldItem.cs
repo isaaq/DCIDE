@@ -21,8 +21,8 @@ namespace DC.IDE.UI.Model.Field
         /// <summary>
         /// Id
         /// </summary>
-        [Display(Name = "Id", GroupName = "基本设置")]
-        public Guid Id { get; set; }
+        //[Display(Name = "Id", GroupName = "基本设置")]
+        //public Guid Id { get; set; }
         /// <summary>
         /// 排序序号
         /// </summary>

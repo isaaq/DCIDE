@@ -14,10 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using DC.IDE.UI.UC.MenuPane;
 using DC.IDE.UI.Util;
 
 using MongoDB.Bson;
 using MongoDB.Driver;
+
+using Telerik.Windows.Controls.TreeView;
+using Telerik.Windows.DragDrop;
 
 namespace DC.IDE.UI.UC
 {
@@ -32,7 +36,8 @@ namespace DC.IDE.UI.UC
         {
             InitializeComponent();
             this.DataContext = this;
-
+            DragDropManager.AddDragOverHandler(treeMenu, RadTreeView_DragOver, true);
+            DragDropManager.AddDropHandler(treeMenu, RadTreeView_Drop, true);
             MenuList = new ObservableCollection<Model.MenuItem>(GetList(null));
         }
 
@@ -48,6 +53,7 @@ namespace DC.IDE.UI.UC
             foreach (var s in all)
             {
                 var mi = new Model.MenuItem();
+                mi.Id = s["_id"].AsObjectId;
                 mi.Name = s["title"].AsString;
                 mi.Title = s["title"].AsString;
                 mi.Namespace = s["namespace"].AsString;
@@ -58,5 +64,25 @@ namespace DC.IDE.UI.UC
             }
             return list;
         }
+
+        private void RadTreeView_DragOver(object sender, Telerik.Windows.DragDrop.DragEventArgs e)
+        {
+            var options = DragDropPayloadManager.GetDataFromObject(e.Data, TreeViewDragDropOptions.Key) as TreeViewDragDropOptions;
+            if (options != null && options.DropPosition != Telerik.Windows.Controls.DropPosition.Inside)
+            {
+                options.DropPosition = Telerik.Windows.Controls.DropPosition.Inside;
+                options.UpdateDragVisual();
+            }
+        }
+
+        private void RadTreeView_Drop(object sender, Telerik.Windows.DragDrop.DragEventArgs e)
+        {
+            var options = DragDropPayloadManager.GetDataFromObject(e.Data, TreeViewDragDropOptions.Key) as TreeViewDragDropOptions;
+            options.DropAction = DropAction.None;
+
+            var menuwin = new MenuPageBindWindow(options);
+            menuwin.ShowDialog();
+        }
+
     }
 }

@@ -7,7 +7,7 @@
              xmlns:behaviors="clr-namespace:DC.IDE.UI.Util"
              xmlns:local="clr-namespace:DC.IDE.UI.UC" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:cv="clr-namespace:DC.IDE.UI.Converter"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+             d:DesignHeight="700" d:DesignWidth="1000" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <cv:CVBase64 x:Key="cvbase64" />
         <HierarchicalDataTemplate x:Key="TopMenuTemplate" ItemsSource="{Binding Children}">
@@ -15,7 +15,7 @@
         </HierarchicalDataTemplate>
     </UserControl.Resources>
     <Grid>
-        <telerik:RadTreeView HorizontalAlignment="Left" Margin="-16,151,0,9.6" Width="157" ItemsSource="{Binding CategoryList}"
+        <telerik:RadTreeView HorizontalAlignment="Left" Margin="10,151,0,10" Width="157" ItemsSource="{Binding CategoryList}"
                              ItemTemplate="{StaticResource TopMenuTemplate}" VerticalAlignment="Stretch" IsLineEnabled="True"  
                              IsDragDropEnabled="True" Background="White" SelectionChanged="RadTreeView_SelectionChanged">
             <interactivity:Interaction.Behaviors>
@@ -27,7 +27,7 @@
                 </Style>
             </telerik:RadTreeView.Resources>
         </telerik:RadTreeView>
-        <TextBox x:Name="txtContent" Margin="180,191,10,10" VerticalContentAlignment="Top" Text="{Binding SelItem.MainContent, Converter={StaticResource cvbase64}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+        <TextBox x:Name="txtContent" Margin="180,191,265,10" VerticalContentAlignment="Top" Text="{Binding SelItem.MainContent, Converter={StaticResource cvbase64}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  AcceptsReturn="True" TextWrapping="Wrap" SelectionChanged="TextBox_SelectionChanged"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="231,151,0,0" TextWrapping="Wrap" Text="{Binding SelItem.Name}" VerticalAlignment="Top" Width="559"/>
         <telerik:RadRibbonView VerticalAlignment="Top" Margin="0" Height="135" Grid.RowSpan="2">
@@ -101,8 +101,40 @@
                         </telerik:RadRibbonDropDownButton>
                     </telerik:RadCollapsiblePanel>
                 </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="其他属性" telerik:ScreenTip.Title="其他属性">
+                    <telerik:RadCollapsiblePanel>
+                        <CheckBox Content="代码控件" IsChecked="{Binding SelItem.IsCode, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding SelItem.Category}"/>
+                    </telerik:RadCollapsiblePanel>
+                </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
         </telerik:RadRibbonView>
         <TextBlock HorizontalAlignment="Left" Margin="180,156,0,0" TextWrapping="Wrap" Text="标题" VerticalAlignment="Top"/>
+        <telerik:RadDocking HasDocumentHost="True" VerticalAlignment="Stretch" Margin="0,191,10,10" HorizontalAlignment="Right" Width="250">
+            <telerik:RadSplitContainer Orientation="Vertical" InitialPosition="DockedLeft">
+                <telerik:RadPaneGroup telerik:ProportionalStackPanel.ElementMaxHeight="200">
+                    <telerik:RadPane Header="Pa">
+                        <Border>
+                            <TextBlock Text="Pane Group with MaxHeight (200)" />
+                        </Border>
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+                <telerik:RadPaneGroup telerik:ProportionalStackPanel.RelativeSize="200, 100">
+                    <telerik:RadPane Header="Pane Left 2">
+                        <Border>
+                            <TextBlock Text="Pane Group with RelativeSize." />
+                        </Border>
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+                <telerik:RadPaneGroup>
+                    <telerik:RadPane Header="Pane Left 3">
+                        <Border>
+                            <TextBlock Text="Pane Group with RelativeSize." />
+                        </Border>
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+
+        </telerik:RadDocking>
     </Grid>
 </UserControl>

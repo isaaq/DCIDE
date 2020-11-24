@@ -4,6 +4,7 @@
 // MVID: 0D536A62-DD1E-45F0-ABC8-30BF28EFB831
 // Assembly location: Y:\codes\win\DCIDE\TestContainer\bin\Debug\DC.IDE.UI.dll
 
+using DC.IDE.UI.Model.Field;
 using Telerik.Windows.Controls.Diagrams.Extensions.ViewModels;
 
 namespace DC.IDE.UI.Diagram.Table
@@ -11,9 +12,9 @@ namespace DC.IDE.UI.Diagram.Table
   public class RowModel : NodeViewModelBase
   {
     private string columnName;
-    private DataType dataType;
+    private FieldType dataType;
 
-    public DataType DataType
+    public FieldType DataType
     {
       get
       {

@@ -53,20 +53,25 @@ namespace DC.IDE.UI.UC.PageList
             var tmlist = all.Select(s =>
             {
                 var fieldlist = new List<FieldModel>();
-                foreach (var field in s["fields"].AsBsonArray)
+                foreach (var field in s["attribute"].AsBsonArray)
                 {
                     BsonElement value;
                     var pk = field.AsBsonDocument.TryGetElement("is_pk", out value);
-                    var fieldmodel = new FieldModel()
+
+                    try
                     {
-                        Name = field["name"].AsString,
-                        Type = field["type"].AsInt32,
-                        Length = field["length"].AsInt32,
-                        Default = field["default"].AsString,
-                        Nullable = field["nullable"].AsBoolean,
-                        IsPK = pk ? field["is_pk"].AsBoolean : false
-                    };
-                    fieldlist.Add(fieldmodel);
+                        var fieldmodel = new FieldModel()
+                        {
+                            Name = field["Name"].AsString,
+                            Type = field["Type"].AsInt32
+                        };
+                        fieldlist.Add(fieldmodel);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    
                 }
 
                 return new TableModel()

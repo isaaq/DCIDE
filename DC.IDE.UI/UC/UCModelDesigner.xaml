@@ -54,6 +54,11 @@
                 <telerik:RadTreeViewItem Header="外部文件" Uid="4"/>
                 <telerik:RadTreeViewItem Header="外部链接" Uid="5"/>
             </telerik:RadTreeViewItem>
+            <telerik:RadTreeViewItem Header="列表和表单" IsExpanded="True">
+                <telerik:RadTreeViewItem Header="列表" Uid="6" />
+                <telerik:RadTreeViewItem Header="表单" Uid="7" />
+                <telerik:RadTreeViewItem Header="报表" Uid="8" />
+            </telerik:RadTreeViewItem>
         </telerik:RadTreeView>
     </Grid>
 </UserControl>

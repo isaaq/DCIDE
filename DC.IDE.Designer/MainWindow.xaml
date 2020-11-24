@@ -3,12 +3,11 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
                 xmlns:Table="clr-namespace:DC.IDE.UI.Diagram.Table;assembly=DC.IDE.UI" x:Class="DC.IDE.Designer.MainWindow"
+                xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
                 Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button telerik:DragDropManager.AllowDrag="True" Margin="39,86,0,0" Content="aaa" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48"/>
-        <WebBrowser Margin="117,41,28,35" Drop="WebBrowser_Drop"
-                    Source="http://www.baidu.com" AllowDrop="True" telerik:DragDropManager.AllowCapturedDrag="True"/>
+        <Button telerik:DragDropManager.AllowDrag="True" Margin="10,10,0,0" Content="aaa" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48"/>
         <!--<telerik:RadDiagram Margin="121,23,42,30" BorderBrush="Black" BorderThickness="1"/>-->
-
+        <cef:ChromiumWebBrowser Margin="81,0,0,0"/>
     </Grid>
 </Window>

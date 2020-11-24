@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MongoDB.Bson;
+
 namespace DC.IDE.UI.Model
 {
     public class MenuItem
@@ -14,5 +16,6 @@ namespace DC.IDE.UI.Model
         public string Url { get; set; }
         public DateTime CreateTime { get; set; }
         public IEnumerable<MenuItem> Children { get; set; }
+        public ObjectId Id { get; set; }
     }
 }

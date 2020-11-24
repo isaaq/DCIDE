@@ -64,7 +64,7 @@
                             </telerik:RadRibbonDropDownButton.DropDownContent>
                         </telerik:RadRibbonDropDownButton>
                         <telerik:RadRibbonDropDownButton Text="插入组件" Size="Large"
-							telerik:ScreenTip.Title="插入元素" LargeImage="/DC.IDE.UI;component/Assets/Icons/icon_details.png">
+							telerik:ScreenTip.Title="插入组件" LargeImage="/DC.IDE.UI;component/Assets/Icons/icon_details.png">
                             <telerik:RadRibbonDropDownButton.DropDownContent>
                                 <!--<telerik:RadContextMenu BorderThickness="0">
                                     <telerik:RadMenuItem Header="Paste" telerik:KeyTipService.AccessText="S" />
@@ -97,6 +97,12 @@
                                             <Grid>
                                                 <Rectangle Fill="Red" Width="50" Height="50" />
                                                 <TextBlock Text="表单" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+                                            </Grid>
+                                        </telerik:RadButton>
+                                        <telerik:RadButton Command="{Binding WebpartCommand}">
+                                            <Grid>
+                                                <Rectangle Fill="Red" Width="50" Height="50" />
+                                                <TextBlock Text="Webpart" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
                                             </Grid>
                                         </telerik:RadButton>
                                     </ListView>

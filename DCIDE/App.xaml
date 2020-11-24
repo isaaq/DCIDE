@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              xmlns:local="clr-namespace:DCIDE"
              xmlns:page="clr-namespace:DC.IDE.UI.UC.PageList;assembly=DC.IDE.UI"
+             xmlns:menu="clr-namespace:DC.IDE.UI.UC.MenuPane;assembly=DC.IDE.UI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -25,6 +26,7 @@
 
             <Style TargetType="page:WinPageAdd" BasedOn="{StaticResource RadWindowStyle}" />
             <Style TargetType="page:InsertFormWindow" BasedOn="{StaticResource RadWindowStyle}" />
+            <Style TargetType="menu:MenuPageBindWindow" BasedOn="{StaticResource RadWindowStyle}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

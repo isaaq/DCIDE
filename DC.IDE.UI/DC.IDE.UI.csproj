@@ -120,6 +120,7 @@
     </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="system.windows.controls.ribbon" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -250,6 +251,10 @@
     <Compile Include="Converter\CVBase64.cs" />
     <Compile Include="Converter\CVFieldType.cs" />
     <Compile Include="Data\ListSampleVM.cs" />
+    <Compile Include="Diagram\Form\Shape\FormElementShape.cs" />
+    <Compile Include="Diagram\Form\UCFormDesignerToolbox.xaml.cs">
+      <DependentUpon>UCFormDesignerToolbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Diagram\Table\AdditionalContent.cs" />
     <Compile Include="Diagram\Table\AttachedProperties.cs" />
     <Compile Include="Diagram\Table\CustomManipulationAdorner.cs" />
@@ -275,6 +280,9 @@
     <Compile Include="Diagram\Table\TablesGraphSource.cs" />
     <Compile Include="Diagram\Table\TableShape.cs" />
     <Compile Include="Diagram\Table\VerticalSwimlaneShape.cs" />
+    <Compile Include="Diagram\Form\UCFormDesigner.xaml.cs">
+      <DependentUpon>UCFormDesigner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Diagram\UCTableShape.xaml.cs">
       <DependentUpon>UCTableShape.xaml</DependentUpon>
     </Compile>
@@ -316,6 +324,9 @@
     </Compile>
     <Compile Include="UC\Layout\LySettings.xaml.cs">
       <DependentUpon>LySettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UC\MenuPane\MenuPageBindWindow.xaml.cs">
+      <DependentUpon>MenuPageBindWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC\PageList\InsertFormWindow.xaml.cs">
       <DependentUpon>InsertFormWindow.xaml</DependentUpon>
@@ -380,9 +391,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Diagram\Form\UCFormDesignerToolbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Diagram\TableResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Diagram\Form\UCFormDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Diagram\UCTableShape.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -397,6 +416,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UC\Layout\LySettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\MenuPane\MenuPageBindWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -475,6 +498,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Resource Include="Diagram\Form\Icons\fontawesome-webfont.ttf" />
+    <Resource Include="Diagram\Form\Icons\Flaticon.ttf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

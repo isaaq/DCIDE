@@ -15,7 +15,8 @@ namespace DC.IDE.UI.Diagram.Table
         protected override IContainerShape GetShapeContainerForItemOverride(
           IContainerItem item)
         {
-            return (IContainerShape)new TableShape();
+            var ts = new TableShape();
+            return (IContainerShape)ts;
         }
 
         protected override IShape GetShapeContainerForItemOverride(object item)

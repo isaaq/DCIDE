@@ -59,7 +59,8 @@ namespace DC.IDE.UI.VM
             var pos = CurrentPosition;
             cnt = cnt.Substring(0, CurrentPosition) + content + cnt.Substring(CurrentPosition);
             SelItem.Content = Convert.ToBase64String(Encoding.UTF8.GetBytes(cnt));
-            ElementInserted(this, pos + content.Length);
+            if(content != null)
+                ElementInserted(this, pos + content.Length);
         }
 
         private void DelPage(object obj)

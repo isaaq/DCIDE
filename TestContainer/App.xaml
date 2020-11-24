@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="/Telerik.Windows.Themes.VisualStudio2019;component/Themes/Telerik.Windows.Controls.Docking.xaml" />
                 <ResourceDictionary Source="/Telerik.Windows.Themes.VisualStudio2019;component/Themes/Telerik.Windows.Controls.GridView.xaml" />
                 <ResourceDictionary Source="/Telerik.Windows.Themes.VisualStudio2019;component/Themes/Telerik.Windows.Controls.RibbonView.xaml" />
+                <ResourceDictionary Source="/Telerik.Windows.Themes.VisualStudio2019;component/Themes/Telerik.Windows.Controls.SyntaxEditor.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="local:WindowA" BasedOn="{StaticResource RadWindowStyle}" />

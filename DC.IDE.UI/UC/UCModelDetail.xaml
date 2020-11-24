@@ -7,7 +7,7 @@
              xmlns:primitives="clr-namespace:Telerik.Windows.Controls.Diagrams.Primitives;assembly=Telerik.Windows.Controls.Diagrams"
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded" Margin="0,0,10,0">
     <Grid>
         <Grid.Resources>
             <ResourceDictionary>
@@ -16,14 +16,20 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="283*"/>
+            <RowDefinition Height="119*"/>
+        </Grid.RowDefinitions>
         <Table:SqlDiagram x:Name="diagram"
-                          Margin="0,5,0,111"
+                          Grid.Row="1"
+                          Margin="0,3,0,0"
                           BorderBrush="#d6d4d4"
                           BorderThickness="1"
 						  Deserialized="OnDiagramDeserialized"
                           ConnectionManipulationCompleted="OnConnectionManipulationCompleted"
                           ConnectionRoundedCorners="True"
-                          GraphSource="{Binding}"
+                          GraphSource="{Binding dc}"
                           ItemsChanging="OnItemsChanging"
                           IsBackgroundSurfaceVisible="False"
                           IsSnapToGridEnabled="False"
@@ -38,7 +44,26 @@
             <primitives:ItemInformationAdorner.AdditionalContent>
                 <Table:TableAdditionalContent ContextItem="{Binding SelectedItem, ElementName=diagram}" Diagram="{Binding ElementName=diagram}"/>
             </primitives:ItemInformationAdorner.AdditionalContent>
+
         </Table:SqlDiagram>
+        <telerik:RadDiagramNavigationPane x:Name="xThumbnail" 
+                                 Grid.Row="1" 
+                                 Diagram="{Binding ElementName=diagram}" Margin="0,0,0,0.333" Height="120" Width="215" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+        <StackPanel Height="36" Margin="10,10,10,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="0">
+            <TextBlock TextWrapping="Wrap" Text="名称" Margin="0,3,10,0" />
+
+            <TextBox Margin="0,0,100,0" VerticalAlignment="Top" Width="192" Text="{Binding ViewName, Mode=TwoWay}"/>
+            <Button Content="新增" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Add_Click" Margin="0,0,10,0"/>
+            <Button Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Del_Click" Margin="0,0,10,0"/>
+            <Button Content="保存" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Save_Click" Margin="0,0,10,0"/>
+            <Button Content="恢复" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Restore_Click" Margin="0,0,10,0"/>
+        </StackPanel>
+        <Grid Grid.Row="2" >
+            <StackPanel Height="31" Margin="10,0" VerticalAlignment="Top">
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            </StackPanel>
+            <telerik:RadSyntaxEditor Margin="10,31,10,10" x:Name="editor" MinWidth="400" MinHeight="50" BorderBrush="Black" />
+        </Grid>
 
     </Grid>
 </UserControl>

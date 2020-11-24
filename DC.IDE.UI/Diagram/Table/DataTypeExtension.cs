@@ -6,6 +6,7 @@
 
 using System;
 using System.Windows.Markup;
+using DC.IDE.UI.Model.Field;
 
 namespace DC.IDE.UI.Diagram.Table
 {
@@ -13,7 +14,7 @@ namespace DC.IDE.UI.Diagram.Table
   {
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
-      return (object) Enum.GetValues(typeof (DataType));
+      return (object) Enum.GetValues(typeof (FieldType));
     }
   }
 }

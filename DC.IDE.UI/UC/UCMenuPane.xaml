@@ -53,7 +53,7 @@
             </telerik:RadButton>
 
         </StackPanel>
-        <telerik:RadTreeView Grid.Row="1" Margin="0 -2 0 0" ItemsSource="{Binding MenuList}" ItemTemplate="{StaticResource TopMenuTemplate}" 
+        <telerik:RadTreeView x:Name="treeMenu" Grid.Row="1" Margin="0 -2 0 0" ItemsSource="{Binding MenuList}" ItemTemplate="{StaticResource TopMenuTemplate}" 
 												 VerticalAlignment="Stretch" Background="{StaticResource LightGrayBackgroundBrush}"
 												 IsLineEnabled="True" IsDragDropEnabled="True" SelectionMode="Multiple">
             <telerik:RadTreeView.Resources>

@@ -15,5 +15,7 @@ namespace DC.IDE.UI.Model
         public BsonArray Fields { get; set; }
         public DateTime ModifyTime { get; set; }
         public string Description { get; set; }
+        public string Code { get; set; }
+        public BsonArray Tables { get; set; }
     }
 }

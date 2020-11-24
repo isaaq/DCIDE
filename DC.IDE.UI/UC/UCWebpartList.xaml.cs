@@ -67,10 +67,10 @@ namespace DC.IDE.UI.UC
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-                addwin = new WinPageAdd();
-                vmwebpart.SelItem = new WebPartPageModel();
-                addwin.DataContext = vmwebpart;
-                addwin.ShowDialog();
+            addwin = new WinPageAdd();
+            //vmwebpart.SelItem = new WebPartPageModel();
+            addwin.DataContext = vmwebpart;
+            addwin.ShowDialog();
         }
 
         private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
@@ -86,7 +86,11 @@ namespace DC.IDE.UI.UC
 
         private void RadTreeView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.ChangePropVM(vmwebpart.SelItem);
+            this.Dispatcher.BeginInvoke(
+                new Action(() =>
+                {
+                    this.ChangePropVM(vmwebpart.SelItem);
+                }), null);
         }
     }
 }

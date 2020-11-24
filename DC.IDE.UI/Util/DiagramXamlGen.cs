@@ -18,17 +18,13 @@ namespace DC.IDE.UI.Util
         private static string LoadDB(ObjectId _id)
         {
             var m = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
-            var t = m.GetTable("models");
+            var t = m.GetTable("sys_views");
             var f = t.Filter(x => x.Eq("_id", _id));
             var r = t.Find(f);
             var item = r.FirstOrDefault();
-            var tables = item["tables"];
-
-            var t2 = m.GetTable("tables");
-            var f2 = t2.Filter(x => x.In<ObjectId>("_id", tables.AsBsonArray.ToObjectId()));
-            var r2 = t2.Find(f2);
+           
             var hb = new StringBuilder();
-            foreach(var i in r2)
+            foreach(var i in item["_tables"].AsBsonArray)
             {
                 var tit = TableItemTemplate(i["name"].ToString());
                 hb.Append(tit);

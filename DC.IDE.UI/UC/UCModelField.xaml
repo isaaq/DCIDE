@@ -10,13 +10,13 @@
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
 
-        <telerik:RadGridView Margin="28,62,10,10" ItemsSource="{Binding FieldItems}" SelectionChanged="RadGridView_SelectionChanged" AutoGenerateColumns="False">
+        <telerik:RadGridView Margin="28,62,10,10" ItemsSource="{Binding FieldItems}" SelectedItem="{Binding SelectedItem}" SelectionChanged="RadGridView_SelectionChanged" AutoGenerateColumns="False">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding ID}"
 											Width="60" IsVisible="False"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}"
 											Width="180" IsVisible="True"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Type}"
+                <telerik:GridViewComboBoxColumn DataMemberBinding="{Binding Type}" ItemsSource="{Binding FieldItems}"
 											Width="80" IsVisible="True"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding LengthRange}"
 											Width="60" IsVisible="True">
@@ -32,7 +32,12 @@
                 </telerik:GridViewDataColumn>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="28,22,0,0" VerticalAlignment="Top" Width="75"/>
+        <StackPanel Height="32" VerticalAlignment="Top" Margin="28,25,10,0" Orientation="Horizontal">
+            <Button Content="添加字段" Command="{Binding NewCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,0,20,0"/>
+            <Button Content="删除字段" Command="{Binding DelCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,0,20,0"/>
+            <Button Content="保存" Command="{Binding SaveCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,0,20,0"/>
+            <Button Content="还原" Command="{Binding RestoreCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,0,20,0"/>
+        </StackPanel>
 
     </Grid>
 </UserControl>

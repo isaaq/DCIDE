@@ -5,6 +5,7 @@
 // Assembly location: Y:\codes\win\DCIDE\TestContainer\bin\Debug\DC.IDE.UI.dll
 
 using System;
+using DC.IDE.UI.Model.Field;
 using Telerik.Windows.Controls.Diagrams.Extensions.ViewModels;
 using Telerik.Windows.Diagrams.Core;
 
@@ -62,7 +63,7 @@ namespace DC.IDE.UI.Diagram.Table
         if (info["ColumnName"] != null)
           rowModel.ColumnName = info["ColumnName"].ToString();
         if (info["DataType"] != null)
-          rowModel.DataType = (DataType) Enum.Parse(typeof (DataType), info["DataType"].ToString(), true);
+          rowModel.DataType = (FieldType) Enum.Parse(typeof (FieldType), info["DataType"].ToString(), true);
         nodeViewModelBase = (NodeViewModelBase) rowModel;
       }
       if (info["MyPosition"] != null)

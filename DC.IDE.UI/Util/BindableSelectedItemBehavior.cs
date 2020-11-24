@@ -6,6 +6,7 @@ using Telerik.Windows.Controls;
 using System.Windows.Interactivity;
 using System.Reflection;
 
+
 namespace DC.IDE.UI.Util
 {
     public class BindableSelectedItemBehavior : Behavior<RadTreeView>
@@ -23,17 +24,17 @@ namespace DC.IDE.UI.Util
 
         private static void OnSelectedItemChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            var tvi = e.NewValue as TreeViewItem;
-            if (tvi == null)
-            {
-                var tree = ((BindableSelectedItemBehavior)sender).AssociatedObject;
-                tvi = GetTreeViewItem(tree, e.NewValue);
-            }
-            if (tvi != null)
-            {
-                tvi.IsSelected = true;
-                tvi.Focus();
-            }
+            //var tvi = e.NewValue as TreeViewItem;
+            //if (tvi == null)
+            //{
+            //    var tree = ((BindableSelectedItemBehavior)sender).AssociatedObject;
+            //    tvi = GetTreeViewItem(tree, e.NewValue);
+            //}
+            //if (tvi != null)
+            //{
+            //    tvi.IsSelected = true;
+            //    tvi.Focus();
+            //}
         }
 
         private static TreeViewItem GetTreeViewItem(ItemsControl container, object item)
@@ -121,7 +122,8 @@ namespace DC.IDE.UI.Util
 
         private void OnTreeViewSelectedItemChanged(object sender, SelectionChangedEventArgs e)
         {
-            SelectedItem = e.AddedItems[0] ;
+            SelectedItem = e.AddedItems[0];
+            //this.OnPropertyChanged(new DependencyPropertyChangedEventArgs(SelectedItemProperty, null, SelectedItem));
         }
 
         protected override void OnDetaching()

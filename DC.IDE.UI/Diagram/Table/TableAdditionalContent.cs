@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using DC.IDE.UI.Model.Field;
 using Telerik.Windows.Controls.Diagrams.Extensions.ViewModels;
 using Telerik.Windows.Diagrams.Core;
 
@@ -39,9 +40,9 @@ namespace DC.IDE.UI.Diagram.Table
       RowModel itemToAdd = new RowModel()
       {
         ColumnName = "NewRow",
-        DataType = DataType.String
+        DataType = FieldType.Text
       };
-      this.Diagram.UndoRedoService.ExecuteCommand((Telerik.Windows.Diagrams.Core.ICommand) new UndoableDelegateCommand("Add new row", (Action<object>) (o => this.AddNewRow(model, (NodeViewModelBase) itemToAdd)), (Action<object>) (o => this.RemoveRow(model, (NodeViewModelBase) itemToAdd)), (Predicate<object>) null), (object) null);
+      this.Diagram.UndoRedoService.ExecuteCommand(new UndoableDelegateCommand("Add new row", (Action<object>)(o => this.AddNewRow(model, (NodeViewModelBase)itemToAdd)), (Action<object>)(o => this.RemoveRow(model, (NodeViewModelBase)itemToAdd)), (Predicate<object>)null), (object) null);
     }
 
     protected override void OnCanRemove(CanExecuteRoutedEventArgs e)
@@ -58,7 +59,7 @@ namespace DC.IDE.UI.Diagram.Table
       if (model == null || model.InternalItems.Count <= 0)
         return;
       NodeViewModelBase itemToRemove = model.InternalItems.LastOrDefault<NodeViewModelBase>();
-      this.Diagram.UndoRedoService.ExecuteCommand((Telerik.Windows.Diagrams.Core.ICommand) new UndoableDelegateCommand("Add new row", (Action<object>) (o => this.RemoveRow(model, itemToRemove)), (Action<object>) (o => this.AddNewRow(model, itemToRemove)), (Predicate<object>) null), (object) null);
+      this.Diagram.UndoRedoService.ExecuteCommand(new UndoableDelegateCommand("Add new row", (Action<object>)(o => this.RemoveRow(model, itemToRemove)), (Action<object>)(o => this.AddNewRow(model, itemToRemove)), (Predicate<object>)null), (object) null);
     }
 
     private void AddNewRow(DiagramTableModel model, NodeViewModelBase itemToRemove)
@@ -69,7 +70,7 @@ namespace DC.IDE.UI.Diagram.Table
         model.AddItem((object) new RowModel()
         {
           ColumnName = "NewRow",
-          DataType = DataType.String
+          DataType = FieldType.Text
         });
       else
         model.AddItem((object) itemToRemove);

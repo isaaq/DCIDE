@@ -7,7 +7,7 @@
            Header="添加页面" Width="274.911" Height="142.47" WindowStartupLocation="CenterOwner">
     <Grid x:Name="LayoutRoot" Margin="2">
         <TextBlock Text="标题" HorizontalAlignment="Left" Margin="57,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="122,25,0,0" TextWrapping="Wrap" Text="{Binding SelItem.Title, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="122,25,0,0" TextWrapping="Wrap" Text="{Binding WindowText, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
         <telerik:RadButton Content="确定" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="75" Command="{Binding AddPageCommand}"/>
 
     </Grid>

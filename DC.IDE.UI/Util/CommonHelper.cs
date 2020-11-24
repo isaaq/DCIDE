@@ -44,11 +44,19 @@ namespace DC.IDE.UI.Util
                 {
                     if (name == "Type")
                     {
-                        var rettype = (FieldType)Enum.Parse(typeof(FieldType), ele.Value.AsString, true);
+                        FieldType rettype;
+                        try
+                        {
+                            rettype = (FieldType)Enum.Parse(typeof(FieldType), ele.Value.AsString, true);
+                        }
+                        catch
+                        {
+                            rettype = (FieldType)(ele.Value.AsInt32);
+                        }
                         propertyInfo.SetValue(fi, rettype, null);
                     }
                     else
-                        propertyInfo.SetValue(fi, ele.Value.AsString, null);
+                        propertyInfo.SetValue(fi, ele.Value == BsonNull.Value ? null : ele.Value.RawValue, null);
                 }
             }
             return fi;

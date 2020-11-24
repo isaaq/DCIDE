@@ -33,8 +33,10 @@ namespace DC.IDE.UI.VM
 
         public DelegateCommand FormCommand { get; set; }
 
-        public WebPartPageModel SelItem { get; set; }
+        public object SelItem { get; set; }
+        public string WindowText { get; set; }
         public int CurrentPosition { get; internal set; }
+        public string MainContent { get; private set; }
 
         public event EventHandler RequestClose;
         public event EventHandler<int> ElementInserted;
@@ -63,24 +65,22 @@ namespace DC.IDE.UI.VM
                 var t = m.GetTable("sys_webparts");
                 var filter = Builders<BsonDocument>.Filter.Eq("category", name);
                 var result = t.Find(filter);
+
+                var item = new CategoryItem();
+                item.Name = name;
+                var arr = new List<string>();
                 var list = result.Select(s => new WebPartPageModel()
                 {
                     Name = s["name"].AsString,
                     Id = s["_id"].AsObjectId,
                     Category = s["category"].AsString,
-                    DataSources = s["datasources"].AsBsonArray,
-                    ManagePageContent = s["managecontent"].AsString,
-                    MainContent = s["maincontent"].AsString,
-                    
+                    DataSources = s.Contains("datasources") ? s["datasources"].AsBsonArray : new BsonArray(arr),
+                    ManagePageContent = s.Contains("managecontent") ? s["managecontent"].AsString : "",
+                    MainContent = s.Contains("maincontent") ? s["maincontent"].AsString : "",
+                    IsCode = s.Contains("iscode") ? s["iscode"].AsBoolean : false,
+                    Parent = item
                 }).ToList();
-                 
-                //foreach(var m in list)
-                //{
-                //    m[]
-                //}
                 var tempcoll = new ObservableCollection<WebPartPageModel>(list);
-                var item = new CategoryItem();
-                item.Name = name;
                 item.Children = tempcoll;
                 CategoryList.Add(item);
             }
@@ -98,13 +98,16 @@ namespace DC.IDE.UI.VM
         {
             var win = new InsertFormWindow();
             win.ShowDialog();
-            var content = win.InsertContent;
-            var cntbyte = Convert.FromBase64String(SelItem.MainContent);
-            var cnt = Encoding.UTF8.GetString(cntbyte);
-            var pos = CurrentPosition;
-            cnt = cnt.Substring(0, CurrentPosition) + content + cnt.Substring(CurrentPosition);
-            SelItem.MainContent = Convert.ToBase64String(Encoding.UTF8.GetBytes(cnt));
-            ElementInserted(this, pos + content.Length);
+            if (SelItem is WebPartPageModel Sel)
+            {
+                var content = win.InsertContent;
+                var cntbyte = Convert.FromBase64String(Sel.MainContent);
+                var cnt = Encoding.UTF8.GetString(cntbyte);
+                var pos = CurrentPosition;
+                cnt = cnt.Substring(0, CurrentPosition) + content + cnt.Substring(CurrentPosition);
+                Sel.MainContent = Convert.ToBase64String(Encoding.UTF8.GetBytes(cnt));
+                ElementInserted(this, pos + content.Length);
+            }
         }
 
         private void DelPage(object obj)
@@ -112,19 +115,22 @@ namespace DC.IDE.UI.VM
             var result = MessageBox.Show("您确定要删除吗?", "", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
             {
-                var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
-                var tbl = db.GetTable("sys_webparts");
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", SelItem.Id);
-                var delresult = tbl.DeleteOne(filter);
-                if (delresult.DeletedCount > 0)
+                if (SelItem is WebPartPageModel Sel)
                 {
-                    CommonHelper.GetNotify().ShowSuccess("删除成功!");
+                    var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
+                    var tbl = db.GetTable("sys_webparts");
+                    var filter = Builders<BsonDocument>.Filter.Eq("_id", Sel.Id);
+                    var delresult = tbl.DeleteOne(filter);
+                    if (delresult.DeletedCount > 0)
+                    {
+                        CommonHelper.GetNotify().ShowSuccess("删除成功!");
 
-                    GetList();
-                }
-                else
-                {
-                    throw new Exception("删除失败");
+                        GetList();
+                    }
+                    else
+                    {
+                        throw new Exception("删除失败");
+                    }
                 }
             }
         }
@@ -134,10 +140,18 @@ namespace DC.IDE.UI.VM
             var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
             var tbl = db.GetTable("sys_webparts");
             var document = new BsonDocument();
-            document["name"] = SelItem.Name;
-            document["maincontent"] = SelItem.MainContent ?? "";
+            document["name"] = WindowText;
+            document["maincontent"] = "";
+            document["iscode"] = false;
+            if (SelItem is WebPartPageModel Sel)
+            {
+                document["category"] = Sel.Parent.Name;
+            }
+            if (SelItem is CategoryItem Sel2)
+            {
+                document["category"] = Sel2.Name;
+            }
             tbl.InsertOne(document);
-
             Close();
             GetList();
         }
@@ -146,18 +160,24 @@ namespace DC.IDE.UI.VM
         {
             if (SelItem != null)
             {
-                var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
-                var tbl = db.GetTable("sys_webparts");
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", SelItem.Id);
-                var update = Builders<BsonDocument>.Update.Set("name", SelItem.Name).Set("content", SelItem.MainContent);
-                var result = tbl.UpdateOne(filter, update);
-                if (result.ModifiedCount > 0 || result.MatchedCount > 0)
+                if (SelItem is WebPartPageModel Sel)
                 {
-                    CommonHelper.GetNotify().ShowSuccess("保存成功!");
-                }
-                else
-                {
-                    throw new Exception("保存失败");
+                    var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
+                    var tbl = db.GetTable("sys_webparts");
+                    var filter = Builders<BsonDocument>.Filter.Eq("_id", Sel.Id);
+                    var update = Builders<BsonDocument>.Update
+                        .Set("name", Sel.Name)
+                        .Set("content", Sel.MainContent)
+                        .Set("iscode", Sel.IsCode);
+                    var result = tbl.UpdateOne(filter, update);
+                    if (result.ModifiedCount > 0 || result.MatchedCount > 0)
+                    {
+                        CommonHelper.GetNotify().ShowSuccess("保存成功!");
+                    }
+                    else
+                    {
+                        throw new Exception("保存失败");
+                    }
                 }
             }
         }

@@ -20,6 +20,7 @@ namespace DC.IDE.UI.VM
     {
         public ObservableCollection<StructItem> StructItems { get; set; }
         public DelegateCommand EditCommand { get; set; }
+        private int _selId;
 
         public VMStruct()
         {
@@ -30,7 +31,7 @@ namespace DC.IDE.UI.VM
 
         private void Edit(object obj)
         {
-           
+            //_selId;
         }
 
         private void BuildData(int type)
@@ -49,11 +50,46 @@ namespace DC.IDE.UI.VM
                     break;
                 case 5:
                     break;
+                case 6:
+                    BuildList(); break;
+                case 7:
+                    BuildForm(); break;
+                case 8:
+                    BuildReport(); break;
                 default:
                     BuildModel(); break;
             }
 
 
+        }
+
+        private void BuildReport()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BuildForm()
+        {
+            var t = M.GetDB("dc_c_" + Application.Current.Properties["Company"]).GetTable("sys_forms");
+            var r = t.FindAll();
+            StructItems.Clear();
+            foreach(var i in r)
+            {
+                var item = new StructItem();
+                item.ID = i["_id"].AsObjectId;
+                item.Name = i["name"].ToString();
+
+                if (i.Contains("modifytime"))
+                    item.ModifyTime = i["modifytime"].ToLocalTime();
+
+                item.Description = i["description"].ToString();
+                StructItems.Add(item);
+            }
+        }
+
+        private void BuildList()
+        {
+            throw new NotImplementedException();
         }
 
         private void BuildModel()
@@ -73,8 +109,6 @@ namespace DC.IDE.UI.VM
                     item.Type = i["type"].ToString();
                 item.Description = i["description"].ToString();
                 StructItems.Add(item);
-
-
             }
         }
 
@@ -85,7 +119,8 @@ namespace DC.IDE.UI.VM
             StructItems.Clear();
             foreach (var i in r)
             {
-                StructItems.Add(new StructItem() { ID = i["_id"].AsObjectId, Name = i["name"].ToString(), Fields = i["fields"].AsBsonArray, ModifyTime = i["modifytime"].ToLocalTime(), Type = i["type"].ToString(), Description = i["description"].ToString() });
+                StructItems.Add(new StructItem() { ID = i["_id"].AsObjectId, Name = i["name"].ToString(), Tables = i["_tables"].AsBsonArray });
+                //, ModifyTime = i["modifytime"].ToLocalTime(), Type = i["type"].ToString(), Description = i["description"].ToString() });
             }
         }
 
@@ -102,6 +137,7 @@ namespace DC.IDE.UI.VM
 
         internal void Select(string uid)
         {
+            this._selId = int.Parse(uid);
             BuildData(int.Parse(uid));
         }
     }
