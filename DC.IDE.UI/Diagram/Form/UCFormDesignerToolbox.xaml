@@ -72,12 +72,13 @@
                     <TextBlock Text="&#xF248;" ToolTip="图片" Tag="15" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
                     <TextBlock Text="&#xF12c;" ToolTip="按钮" Tag="16" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
                     <TextBlock Text="&#xF2C8;" ToolTip="表格" Tag="17" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
-                    <TextBlock Text="&#xF24D;" ToolTip="地址输入框" Tag="18" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
-                    <TextBlock Text="&#xF190;" ToolTip="地图" Tag="19" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
-                    <TextBlock Text="&#xF292;" ToolTip="搜索框" Tag="20" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
-                    <TextBlock Text="&#xF192;" ToolTip="文本编辑器" Tag="21" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
-                    <TextBlock Text="&#xF308;" ToolTip="音频" Tag="22" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
-                    <TextBlock Text="&#xF227;" ToolTip="视频" Tag="23" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF2B5;" ToolTip="分组框" Tag="18" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF24D;" ToolTip="地址输入框" Tag="19" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF190;" ToolTip="地图" Tag="20" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF292;" ToolTip="搜索框" Tag="21" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF192;" ToolTip="文本编辑器" Tag="22" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF308;" ToolTip="音频" Tag="23" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
+                    <TextBlock Text="&#xF227;" ToolTip="视频" Tag="24" FontFamily="/DC.IDE.UI;component/Diagram/Form/Icons/#Flaticon"/>
                 </telerik:RadListBox>
             </Grid>
         </Border>

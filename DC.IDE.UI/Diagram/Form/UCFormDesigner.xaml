@@ -6,9 +6,28 @@
              xmlns:local="clr-namespace:DC.IDE.UI.Diagram"
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
              xmlns:form="clr-namespace:DC.IDE.UI.Diagram.Form" x:Class="DC.IDE.UI.Diagram.Form.UCFormDesigner"
+             xmlns:shape="clr-namespace:DC.IDE.UI.Diagram.Form.Shape"
              xmlns:primitives="clr-namespace:Telerik.Windows.Controls.Diagrams.Primitives;assembly=Telerik.Windows.Controls.Diagrams"
 		     xmlns:extensions="clr-namespace:Telerik.Windows.Controls.Diagrams.Extensions;assembly=Telerik.Windows.Controls.Diagrams.Extensions"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="573.2">
+    <UserControl.Resources>
+        <Style TargetType="shape:FormContainerShape" BasedOn="{StaticResource RadDiagramContainerShapeStyle}">
+            <Setter Property="Background" Value="#AB1D8AE4" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <!--<Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>-->
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid x:Name="diagramRootPanel">
             <Grid x:Name="diagramHostPanel">

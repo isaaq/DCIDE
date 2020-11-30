@@ -13,20 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using DC.IDE.UI.Diagram.Form.VM;
+using Telerik.Windows.Controls;
 
 namespace DC.IDE.UI.Diagram.Form
 {
     /// <summary>
-    /// UCFormDesigner.xaml 的交互逻辑
+    /// UserControl1.xaml 的交互逻辑
     /// </summary>
-    public partial class UCFormDesigner : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public UCFormDesigner()
+        public List<RadDiagramShape> S { get; set; }
+        public UserControl1()
         {
             InitializeComponent();
-            this.DataContext = new VMFormDiagram();
-            //diagram.GraphSource = new VMFormDiagramGraphSource();
+            this.DataContext = this;
+            S = new List<RadDiagramShape>();
+            S.Add(new RadDiagramShape());
+            S.Add(new RadDiagramShape());
+            S.Add(new RadDiagramShape());
         }
     }
 }

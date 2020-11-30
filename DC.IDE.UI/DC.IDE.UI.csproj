@@ -251,10 +251,15 @@
     <Compile Include="Converter\CVBase64.cs" />
     <Compile Include="Converter\CVFieldType.cs" />
     <Compile Include="Data\ListSampleVM.cs" />
+    <Compile Include="Diagram\Form\Shape\FormContainerShape.cs" />
     <Compile Include="Diagram\Form\Shape\FormElementShape.cs" />
+    <Compile Include="Diagram\Form\Shape\FormShapeCreator.cs" />
+    <Compile Include="Diagram\Form\Shape\IFormElementShape.cs" />
     <Compile Include="Diagram\Form\UCFormDesignerToolbox.xaml.cs">
       <DependentUpon>UCFormDesignerToolbox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Diagram\Form\VM\VMFormDiagram.cs" />
+    <Compile Include="Diagram\Form\VM\VMFormDiagramGraphSource.cs" />
     <Compile Include="Diagram\Table\AdditionalContent.cs" />
     <Compile Include="Diagram\Table\AttachedProperties.cs" />
     <Compile Include="Diagram\Table\CustomManipulationAdorner.cs" />
@@ -509,7 +514,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UC\Form\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

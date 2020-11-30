@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Design;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,10 +36,31 @@ namespace DC.IDE.UI.Diagram.Form
             DragDropManager.AddDragInitializeHandler(toolbox, OnDragInitialize);
         }
 
-        private DiagramDropInfo GetFormElement(Size dropSize, string tag)
+        private DiagramDropInfo GetFormElement(Size dropSize, TextBlock tb)
         {
-            var shape = new FormElementShape();
-            var diagramDropInfo = new DiagramDropInfo(dropSize, SerializationService.Default.SerializeItems(new RadDiagramShape[1] { shape }));
+            var tag = tb.Tag.ToString();
+            var text = tb.ToolTip;
+            // TODO 不应该放这儿
+            var dispatcher = new string[30];
+            dispatcher[18] = "CreateContainerShape";
+            var ele = dispatcher[int.Parse(tag)];
+            RadDiagramShapeBase shape = new FormElementShape().CreateShape();
+            if (ele != null)
+            {
+
+                //Activator.CreateInstance(Assembly.GetAssembly(typeof(UCFormDesignerToolbox)).FullName, "DC.IDE.UI.Diagram.Form.Shape." + dispatcher[int.Parse(tag)]);
+                var method = typeof(FormShapeCreator).GetMethod(ele, BindingFlags.Public | BindingFlags.Static);
+                var ret = method.Invoke(null, new object[] { "分组框", null });
+
+                if (ret is RadDiagramShapeBase dsb)
+                {
+                    shape = dsb;
+                }
+            } else {
+                shape.Content = text;
+            }
+            var newshape = new RadDiagramShapeBase[1] { shape };
+            var diagramDropInfo = new DiagramDropInfo(dropSize, SerializationService.Default.SerializeItems(newshape));
 
             return diagramDropInfo;
         }
@@ -52,7 +74,7 @@ namespace DC.IDE.UI.Diagram.Form
                 if (content == null)
                     return;
                 var dropSize = new Size(content.ActualWidth, content.ActualHeight);
-                var dropInfo = GetFormElement(dropSize, content.Tag.ToString());
+                var dropInfo = GetFormElement(dropSize, content);
                 e.Data = dropInfo;
                 e.DragVisualOffset = new Point(e.RelativeStartPoint.X - dropSize.Width * 2.0, e.RelativeStartPoint.Y - dropSize.Height * 2.0);
 
@@ -75,7 +97,7 @@ namespace DC.IDE.UI.Diagram.Form
                 newimg.Source = image;
                 e.DragVisual = (object)newimg;
 
-                
+
                 e.AllowedEffects = DragDropEffects.All;
                 e.Handled = true;
             }
