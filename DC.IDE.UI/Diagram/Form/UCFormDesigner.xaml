@@ -9,7 +9,7 @@
              xmlns:shape="clr-namespace:DC.IDE.UI.Diagram.Form.Shape"
              xmlns:primitives="clr-namespace:Telerik.Windows.Controls.Diagrams.Primitives;assembly=Telerik.Windows.Controls.Diagrams"
 		     xmlns:extensions="clr-namespace:Telerik.Windows.Controls.Diagrams.Extensions;assembly=Telerik.Windows.Controls.Diagrams.Extensions"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="573.2">
+             mc:Ignorable="d" Width="1200" Height="800">
     <UserControl.Resources>
         <Style TargetType="shape:FormContainerShape" BasedOn="{StaticResource RadDiagramContainerShapeStyle}">
             <Setter Property="Background" Value="#AB1D8AE4" />

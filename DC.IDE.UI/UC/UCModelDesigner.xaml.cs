@@ -37,7 +37,7 @@ namespace DC.IDE.UI.UC
         private void GridViewHyperlinkColumn_Click(object sender, RoutedEventArgs e)
         {
             var hyperLink = e.OriginalSource as Hyperlink;
-            if (this.ListItemClicked == null)
+            if (this.ListItemClicked == null || hyperLink == null)
                 return;
             var item = hyperLink.DataContext as StructItem;
             this.ListItemClicked(this, item);

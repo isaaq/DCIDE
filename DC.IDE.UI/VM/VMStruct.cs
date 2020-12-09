@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 using DC.IDE.UI.Model;
+using DC.IDE.UI.UC.Form;
 using DC.IDE.UI.Util;
 
 using PostSharp.Patterns.Model;
@@ -20,6 +21,7 @@ namespace DC.IDE.UI.VM
     {
         public ObservableCollection<StructItem> StructItems { get; set; }
         public DelegateCommand EditCommand { get; set; }
+        public StructItem SelItem { get; set; }
         private int _selId;
 
         public VMStruct()
@@ -31,7 +33,20 @@ namespace DC.IDE.UI.VM
 
         private void Edit(object obj)
         {
+            SelItem = (StructItem)obj;
             //_selId;
+            RadWindow win = null;
+            switch(_selId)
+            {
+                case 0:
+                     break;
+                case 7: win = new WinFormDesigner(SelItem); break;
+                   
+            }
+            if (win != null)
+            {
+                win.ShowDialog();
+            }
         }
 
         private void BuildData(int type)
@@ -81,15 +96,29 @@ namespace DC.IDE.UI.VM
 
                 if (i.Contains("modifytime"))
                     item.ModifyTime = i["modifytime"].ToLocalTime();
-
-                item.Description = i["description"].ToString();
+                if (i.Contains("description"))
+                    item.Description = i["description"].ToString();
                 StructItems.Add(item);
             }
         }
 
         private void BuildList()
         {
-            throw new NotImplementedException();
+            var t = M.GetDB("dc_c_" + Application.Current.Properties["Company"]).GetTable("sys_lists");
+            var r = t.FindAll();
+            StructItems.Clear();
+            foreach (var i in r)
+            {
+                var item = new StructItem();
+                item.ID = i["_id"].AsObjectId;
+                item.Name = i["name"].ToString();
+
+                if (i.Contains("modifytime"))
+                    item.ModifyTime = i["modifytime"].ToLocalTime();
+                if (i.Contains("description"))
+                    item.Description = i["description"].ToString();
+                StructItems.Add(item);
+            }
         }
 
         private void BuildModel()

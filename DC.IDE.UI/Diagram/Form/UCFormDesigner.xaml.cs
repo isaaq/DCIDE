@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using DC.IDE.UI.Diagram.Form.VM;
+using DC.IDE.UI.Model;
 
 namespace DC.IDE.UI.Diagram.Form
 {
@@ -22,10 +23,23 @@ namespace DC.IDE.UI.Diagram.Form
     /// </summary>
     public partial class UCFormDesigner : UserControl
     {
+        public static readonly DependencyProperty ItemProperty = DependencyProperty.Register(
+          "Item",
+          typeof(StructItem),
+          typeof(UCFormDesigner),
+          new PropertyMetadata(new StructItem())
+        );
+
+        public StructItem Item
+        {
+            get { return (StructItem)GetValue(ItemProperty); }
+            set { SetValue(ItemProperty, value); }
+        }
+
         public UCFormDesigner()
         {
             InitializeComponent();
-            this.DataContext = new VMFormDiagram();
+            this.DataContext = new VMFormDiagram(Item);
             //diagram.GraphSource = new VMFormDiagramGraphSource();
         }
     }
