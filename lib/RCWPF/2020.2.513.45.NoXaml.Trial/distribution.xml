@@ -3,9 +3,6 @@
   <Version>2020.2.513.45</Version>
   <Trial>true</Trial>
   <Dependencies>
-    <Project>f6fe2f6d-bfba-4eb1-9262-b688f381ff01</Project>
-    <Project>0c2b846a-ef85-44a4-a5dc-5e1d2a112be2</Project>
-    <Project>fb28c4b0-44f8-4f92-909d-9e09a446cfae</Project>
     <Project>9a78a618-9c1e-49e7-9bca-6e10b89a559b</Project>
   </Dependencies>
   <NoXaml>true</NoXaml>

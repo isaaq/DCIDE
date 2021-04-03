@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadDiagram Version="2018.3">
+  <Metadata Type="Telerik.Windows.Controls.RadDiagram" Id="04ca8e75-89fd-461d-af41-f993856d5cc1" Zoom="0.72" Position="1048;224" SelectionMode="Extended" IsSnapEnabled="true" Routing="True">
+    <Title>Diagram [9/02/2012 9:13:35]</Title>
+    <Description></Description>
+  </Metadata>
+  <Groups />
+  <Shapes QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="8dcda598-3ae3-4fe2-a87b-4cc3da99b929" ZIndex="2" Position="320;280" Content="UX" Stroke="#FF005857" StrokeThickness="0" Background="#FF15ACA9" Foreground="#FFFFFFFF" BorderBrush="#FF005857" FontSize="36" FontWeight="700" Size="180;180" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M111.5,37.5C111.5,57.91 86.67,74.5 56,74.5 25.33,74.5 0.5,57.91 0.5,37.5 0.5,17.09 25.33,0.5 56,0.5 86.67,0.5 111.5,17.09 111.5,37.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector27140656" Offset="0.0808080808080806;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector58210574" Offset="0.911616161616161;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector27329770" Offset="0.186868686868687;0.891414141414142" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector28769452" Offset="0.81060606060606;0.888888888888889" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="a650b964-b424-462a-93a1-10e63495ec3f" ZIndex="2" Position="340;-190" Content=" Stakeholder &#xD;&#xA;   Research &#xD;&#xA;______________&#xD;&#xA;&#xD;&#xA; Explore the &#xD;&#xA;   Options" Stroke="#FF00537A" StrokeThickness="0" Background="#FF23A0DA" Foreground="#FFFFFFFF" BorderBrush="#FF00537A" FontSize="20" Size="140;210" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnect2222" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnect2or89898" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector77773" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnec44444" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector131315" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector11919193" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector282882" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector145454545" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="5155c4be-c7d7-4840-ae41-2703705727c5" ZIndex="2" Position="340;100" Content="Bussiness &#xD;&#xA;    Goals " Stroke="#FF00537A" StrokeThickness="0" Background="#FF23A0DA" Foreground="#FFFFFFFF" BorderBrush="#FF00537A" FontSize="20" FontWeight="700" Size="140;140" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M111.5,37.5C111.5,57.91 86.67,74.5 56,74.5 25.33,74.5 0.5,57.91 0.5,37.5 0.5,17.09 25.33,0.5 56,0.5 86.67,0.5 111.5,17.09 111.5,37.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector271403212656" Offset="0.0808080808080806;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector5821545450574" Offset="0.911616161616161;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector2732657709770" Offset="0.186868686868687;0.891414141414142" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector287600009452" Offset="0.81060606060606;0.888888888888889" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" ZIndex="2" Position="560;180" Content="     UX &#xD;&#xA;Research" Stroke="#FF370060" StrokeThickness="0" Background="#FF7F51A1" Foreground="#FFFFFFFF" BorderBrush="#FF370060" FontSize="20" FontWeight="700" Size="140;140" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M111.5,37.5C111.5,57.91 86.67,74.5 56,74.5 25.33,74.5 0.5,57.91 0.5,37.5 0.5,17.09 25.33,0.5 56,0.5 86.67,0.5 111.5,17.09 111.5,37.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector121227140656" Offset="0.0808080808080806;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector5444448210574" Offset="0.911616161616161;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector276756675329770" Offset="0.186868686868687;0.891414141414142" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector2656568769452" Offset="0.81060606060606;0.888888888888889" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="4d47c9c0-afea-49b4-9ca9-b903337a81fb" ZIndex="2" Position="800;0" Content="  Task model &#xD;&#xA;understanding" Stroke="#FF370060" StrokeThickness="0" Background="#FF7F51A1" Foreground="#FFFFFFFF" BorderBrush="#FF370060" FontSize="20" FontWeight="400" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector12312312" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector135565652" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnect77777" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector43456" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1566635" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector153645632323" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector122564783272" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector125335336767" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="da8bd407-dfe5-4799-856d-678c2ee22974" ZIndex="2" Position="560;420" Content="Strategy" Stroke="#FF853B63" StrokeThickness="0" Background="#FFDF73AD" Foreground="#FFFFFFFF" BorderBrush="#FF853B63" FontSize="20" FontWeight="700" Size="140;140" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M111.5,37.5C111.5,57.91 86.67,74.5 56,74.5 25.33,74.5 0.5,57.91 0.5,37.5 0.5,17.09 25.33,0.5 56,0.5 86.67,0.5 111.5,17.09 111.5,37.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector12120656" Offset="0.0808080808080806;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector545450574" Offset="0.911616161616161;0.222222222222222" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector24545770" Offset="0.186868686868687;0.891414141414142" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector286456452" Offset="0.81060606060606;0.888888888888889" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="22cb86d8-db38-4278-ae96-9c50672f8588" ZIndex="2" Position="800;440" Content="Planing" Stroke="#FF853B63" StrokeThickness="0" Background="#FFDF73AD" Foreground="#FFFFFFFF" BorderBrush="#FF853B63" FontSize="20" FontWeight="700" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector123244" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector4242" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1441223" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector412124" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1512" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1696969" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector88882" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector17777" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="0399cd84-5743-4c93-b124-cdaab28e375d" ZIndex="2" Position="120;420" Content="Design" Stroke="#FFAB6200" StrokeThickness="0" Background="#FFF19720" Foreground="#FFFFFFFF" BorderBrush="#FFAB6200" FontSize="20" FontWeight="700" Size="140;140" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M111.5,37.5C111.5,57.91 86.67,74.5 56,74.5 25.33,74.5 0.5,57.91 0.5,37.5 0.5,17.09 25.33,0.5 56,0.5 86.67,0.5 111.5,17.09 111.5,37.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector19413056" Offset="0.948051948051948;0.282467532467532" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector27194366" Offset="0.946428571428571;0.714285714285714" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector19271002" Offset="0.852678571428571;0.852678571428571" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector66298485" Offset="0.714285714285714;0.950892857142857" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector16027853" Offset="0.290178571428571;0.950892857142857" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="NewConnector30844767" Offset="0.151785714285714;0.848214285714286" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="a9c2156c-de4b-44dc-8704-bfcddb129774" ZIndex="2" Position="-80;140" Content="Sketches" Stroke="#FFAB6200" StrokeThickness="0" Background="#FFF19720" Foreground="#FFFFFFFF" BorderBrush="#FFAB6200" FontSize="20" FontWeight="700" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector12312" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector3332" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1123" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector244" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1535" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1523" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector12" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector167" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="bde6da4b-c3c2-4ec6-898b-1265b0493aee" ZIndex="2" Position="-80;280" Content="Prototype" Stroke="#FFAB6200" StrokeThickness="0" Background="#FFF19720" Foreground="#FFFFFFFF" BorderBrush="#FFAB6200" FontSize="20" FontWeight="700" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector31232412312" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector13789723332" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector7896632123" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector456756944" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector15567856735" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector145674589323" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector12964746772" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1233560676767" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="e700c0fc-6737-4e6a-918b-614392c36e11" ZIndex="2" Position="120;140" Content="Visual Design" Stroke="#FFAB6200" StrokeThickness="0" Background="#FFF19720" Foreground="#FFFFFFFF" BorderBrush="#FFAB6200" FontSize="20" FontWeight="700" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1246745682412312" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector134568332" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector44568123" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector442456845244" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1527943535" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1533678902323" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector12123189272" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector129854546767" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="1016d847-f405-4511-8d4d-ade7102b599d" ZIndex="2" Position="800;-140" Content="    Business &#xD;&#xA;Requirements" Stroke="#FF370060" StrokeThickness="0" Background="#FF7F51A1" Foreground="#FFFFFFFF" BorderBrush="#FF370060" FontSize="20" FontWeight="400" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1232412412312" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1332323332" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1232123" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector44242244" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1553535" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector15332323" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1223272" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1236767" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="86be0a39-5d95-4cd1-8bc7-15288cfaf432" ZIndex="2" Position="800;140" Content=" Technical &#xD;&#xA;Constraints" Stroke="#FF370060" StrokeThickness="0" Background="#FF7F51A1" Foreground="#FFFFFFFF" BorderBrush="#FF370060" FontSize="20" FontWeight="400" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1231669" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector9999" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1285965" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector5464" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector155411" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1533653223123" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1223656272" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector128736767" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="5aab019d-3352-4ca2-9b5b-0ee36d460efd" ZIndex="2" Position="800;280" Content="      User &#xD;&#xA;Information" Stroke="#FF370060" StrokeThickness="0" Background="#FF7F51A1" Foreground="#FFFFFFFF" BorderBrush="#FF370060" FontSize="20" FontWeight="400" Size="160;100" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector1232426969" Offset="0;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector13378782323332" Offset="0;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector123267678123" Offset="1;0.25" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector442499992244" Offset="1;0.75" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector15523233535" Offset="0.25;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector153355552323" Offset="0.75;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector122212123272" Offset="0.25;1" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="CustomConnector12366666767" Offset="0.75;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+    <RadDiagramShape Type="Telerik.Windows.Controls.RadDiagramShape" Id="80ec76c5-f3d1-4799-bb72-697791a08665" ZIndex="2" Position="-80;-140" Content="Hint: For a greater visual representation, go to  Configurator and use the options to modify the connections routing algorithm." Stroke="#FFC8AA22" StrokeDashArray="4 4 " Background="#FFFFF2B7" Foreground="#FFC00000" BorderBrush="#FFC8AA22" FontSize="18" FontWeight="400" Size="370;110" RotationAngle="0" MinWidth="0" MinHeight="0" MaxWidth="INF" MaxHeight="INF" UseDefaultConnectors="True" Geometry="M0.5,0.5L111.5,0.5 111.5,74.5 0.5,74.5z" QN="0">
+      <Connectors QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Auto" Offset="0.5;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Left" Offset="0;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Top" Offset="0.5;0" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Right" Offset="1;0.5" QN="0" />
+        <RadDiagramConnector Type="Telerik.Windows.Controls.Diagrams.RadDiagramConnector" Name="Bottom" Offset="0.5;1" QN="0" />
+      </Connectors>
+    </RadDiagramShape>
+  </Shapes>
+  <Connections QNs="Telerik.Windows.Controls.Diagrams, Version=2018.3.1119.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7;">
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="28c2899e-57e8-4cb7-a954-f05f29a0b0ae" ZIndex="1" Position="252.727272727273;440.454545454546" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF2CA3A2" StrokeThickness="3" Background="#FF94F1F0" BorderBrush="#FF2CA3A2" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="252.727272727273;459.545454545455" Source="0399cd84-5743-4c93-b124-cdaab28e375d" EndPoint="353.636363636364;440.454545454546" Target="8dcda598-3ae3-4fe2-a87b-4cc3da99b929" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="cf9ad67a-19c6-484a-895e-0d571137adcd" ZIndex="1" Position="484.090909090909;304.79797979798" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF2CA3A2" StrokeThickness="3" Background="#FF94F1F0" BorderBrush="#FF2CA3A2" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="484.090909090909;320" Source="8dcda598-3ae3-4fe2-a87b-4cc3da99b929" EndPoint="586.161616161616;304.79797979798" Target="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="62a52e58-8310-4d86-a678-2e681fe93b3a" ZIndex="1" Position="280;200" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF2CA3A2" StrokeThickness="3" Background="#FF94F1F0" BorderBrush="#FF2CA3A2" SourceConnectorPosition="Auto" TargetConnectorPosition="Right" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="334.545454545455;320" Source="8dcda598-3ae3-4fe2-a87b-4cc3da99b929" EndPoint="280;210" Target="e700c0fc-6737-4e6a-918b-614392c36e11" ConnectionType="Polyline" ConnectionPoints="320;280;320;240;320;200" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="812846f1-0ad1-443b-af60-ff49674aa21c" ZIndex="1" Position="410;240" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF2CA3A2" StrokeThickness="3" Background="#FF94F1F0" BorderBrush="#FF2CA3A2" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="410;280" Source="8dcda598-3ae3-4fe2-a87b-4cc3da99b929" EndPoint="410;240" Target="5155c4be-c7d7-4840-ae41-2703705727c5" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="13d87735-4dee-4e4f-8e23-c6b5076a759e" ZIndex="1" Position="410;20" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF00537A" StrokeThickness="2" Background="#FF23A0DA" BorderBrush="#FF00537A" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="410;100" Source="5155c4be-c7d7-4840-ae41-2703705727c5" EndPoint="410;20" Target="a650b964-b424-462a-93a1-10e63495ec3f" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="b8705866-56f5-4942-8f9d-52973bca5178" ZIndex="1" Position="-120;120" IsRotationEnabled="false" IsResizingEnabled="false" Content="" Stroke="#FFAB6200" StrokeThickness="2" Background="#FFF19720" BorderBrush="#FFAB6200" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="190;420" Source="0399cd84-5743-4c93-b124-cdaab28e375d" EndPoint="80;190" Target="a9c2156c-de4b-44dc-8704-bfcddb129774" ConnectionType="Polyline" ConnectionPoints="160;400;160;360;160;320;160;280;120;280;120;320;120;360;120;400;80;400;40;400;0;400;-40;400;-80;400;-120;400;-120;360;-120;320;-120;280;-120;240;-120;200;-120;160;-120;120;-80;120;-40;120;0;120;40;120;80;120;120;120;120;160" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="dd22f2a4-67a8-481b-b653-b67dc53bbb5b" ZIndex="1" Position="160;260" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFAB6200" StrokeThickness="2" Background="#FFF19720" BorderBrush="#FFAB6200" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="190;420" Source="0399cd84-5743-4c93-b124-cdaab28e375d" EndPoint="200;260" Target="e700c0fc-6737-4e6a-918b-614392c36e11" ConnectionType="Polyline" ConnectionPoints="160;400;160;360;160;320;160;280;200;280" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="1bb20a62-5538-420d-b377-262e84c7ea98" ZIndex="1" Position="40;380" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFAB6200" StrokeThickness="2" Background="#FFF19720" BorderBrush="#FFAB6200" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="120;490" Source="0399cd84-5743-4c93-b124-cdaab28e375d" EndPoint="40.2380952380952;380" Target="bde6da4b-c3c2-4ec6-898b-1265b0493aee" ConnectionType="Polyline" ConnectionPoints="80;480;80;440;80;400;40;400" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="1a91dc59-eddc-4713-8925-d5a878b3a1b9" ZIndex="1" Position="630;320" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" StrokeDashArray="1 0 " Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="630;320" Source="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" EndPoint="630;420" Target="da8bd407-dfe5-4799-856d-678c2ee22974" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="fe9b6755-34e7-4606-93b7-cf6834e548a9" ZIndex="1" Position="260;480" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFC85C7E" StrokeThickness="2" StrokeDashArray="1 0 " Background="#FFFFBBD1" BorderBrush="#FFC85C7E" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="560;490" Source="da8bd407-dfe5-4799-856d-678c2ee22974" EndPoint="260;490" Target="0399cd84-5743-4c93-b124-cdaab28e375d" ConnectionType="Polyline" ConnectionPoints="520;480;480;480;440;480;400;480;360;480;320;480;280;480" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="18568d38-9448-4564-b54b-3c380eac90fc" ZIndex="1" Position="120;210" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFAB6200" StrokeThickness="2" StrokeDashArray="1 0 " Background="#FFF19720" BorderBrush="#FFAB6200" SourceConnectorPosition="Auto" TargetConnectorPosition="Left" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="190;420" Source="0399cd84-5743-4c93-b124-cdaab28e375d" EndPoint="120;210" Target="e700c0fc-6737-4e6a-918b-614392c36e11" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="214f526a-4544-453f-bac0-bf26c8961a04" ZIndex="1" Position="700;490" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFC85C7E" StrokeThickness="2" Background="#FFFFBBD1" BorderBrush="#FFC85C7E" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="700;490" Source="da8bd407-dfe5-4799-856d-678c2ee22974" EndPoint="800;490" Target="22cb86d8-db38-4278-ae96-9c50672f8588" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="27c255cd-22b5-4b15-9004-8836d7743b82" ZIndex="1" Position="260;400" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFC85C7E" StrokeThickness="2" Background="#FFFFBBD1" BorderBrush="#FFC85C7E" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="800;490" Source="22cb86d8-db38-4278-ae96-9c50672f8588" EndPoint="260;490" Target="0399cd84-5743-4c93-b124-cdaab28e375d" ConnectionType="Polyline" ConnectionPoints="760;480;720;480;720;440;720;400;680;400;640;400;600;400;560;400;520;400;520;440;520;480;480;480;440;480;400;480;360;480;320;480;280;480" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="2c07f95f-6c5e-4677-994b-222dd62cf98c" ZIndex="1" Position="480;170" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF00537A" StrokeThickness="2" Background="#FF23A0DA" BorderBrush="#FF00537A" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="480;170" Source="5155c4be-c7d7-4840-ae41-2703705727c5" EndPoint="571.313131313131;211.111111111111" Target="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="b50619ca-6482-41c3-9d17-64ff0e4247c5" ZIndex="1" Position="700;250" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="700;250" Source="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" EndPoint="800;285" Target="5aab019d-3352-4ca2-9b5b-0ee36d460efd" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="a93b571e-271a-44dd-9d10-538a9b78d9cb" ZIndex="1" Position="700;215" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="700;250" Source="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" EndPoint="800;215" Target="86be0a39-5d95-4cd1-8bc7-15288cfaf432" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="f108b29a-f3cc-49db-b796-2388bef15533" ZIndex="1" Position="687.626262626263;80" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="687.626262626263;211.111111111111" Source="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" EndPoint="800;95" Target="4d47c9c0-afea-49b4-9ca9-b903337a81fb" ConnectionType="Polyline" ConnectionPoints="720;200;720;160;720;120;720;80;760;80" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="d0798981-8c3c-4f5d-a716-505b7670d6fd" ZIndex="1" Position="687.626262626263;0" IsRotationEnabled="false" IsResizingEnabled="false" Content="" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="687.626262626263;211.111111111111" Source="532dd7ab-9547-45c8-88f8-c9f0433e6d5a" EndPoint="840;0" Target="1016d847-f405-4511-8d4d-ade7102b599d" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="d3794b5e-c4d8-4301-a578-47218c8c2da4" ZIndex="1" Position="440;440" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF2CA3A2" StrokeThickness="3" Background="#FF94F1F0" BorderBrush="#FF2CA3A2" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="571.313131313131;451.111111111111" Source="da8bd407-dfe5-4799-856d-678c2ee22974" EndPoint="465.909090909091;440" Target="8dcda598-3ae3-4fe2-a87b-4cc3da99b929" ConnectionType="Polyline" ConnectionPoints="560;440;520;440;520;480;480;480;440;480" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="20c5ba95-07f1-468d-9e6c-bcc6aed23560" ZIndex="1" Position="453.484848484848;224.444444444444" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF00537A" StrokeThickness="2" Background="#FF23A0DA" BorderBrush="#FF00537A" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="453.484848484848;224.444444444444" Source="5155c4be-c7d7-4840-ae41-2703705727c5" EndPoint="571.313131313131;451.111111111111" Target="da8bd407-dfe5-4799-856d-678c2ee22974" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="c69d47f6-8d42-4dbe-b3e4-6dbe29c0f886" ZIndex="1" Position="880;0" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="880;0" Source="1016d847-f405-4511-8d4d-ade7102b599d" EndPoint="880;20" Target="4d47c9c0-afea-49b4-9ca9-b903337a81fb" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="9069ef83-834d-4d52-b7cf-1fba28ab9c51" ZIndex="1" Position="880;120" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="880;120" Source="4d47c9c0-afea-49b4-9ca9-b903337a81fb" EndPoint="880;140" Target="86be0a39-5d95-4cd1-8bc7-15288cfaf432" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="9ba59d0d-bf00-4dde-a644-fa15d3037bc9" ZIndex="1" Position="880;240" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="880;240" Source="86be0a39-5d95-4cd1-8bc7-15288cfaf432" EndPoint="880;260" Target="5aab019d-3352-4ca2-9b5b-0ee36d460efd" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="5fa2b5d0-8ff3-4092-94da-866684ede9da" ZIndex="1" Position="0;240" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FFAB6200" StrokeThickness="2" Background="#FFF19720" BorderBrush="#FFAB6200" SourceConnectorPosition="Auto" TargetConnectorPosition="Auto" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="0;280" Source="bde6da4b-c3c2-4ec6-898b-1265b0493aee" EndPoint="0;240" Target="a9c2156c-de4b-44dc-8704-bfcddb129774" ConnectionType="Polyline" ConnectionPoints="" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="4bd36142-2268-443a-b193-e2a7fe46d309" ZIndex="1" Position="960;-80" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Right" TargetConnectorPosition="Right" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="960;310" Source="5aab019d-3352-4ca2-9b5b-0ee36d460efd" EndPoint="960;-50" Target="1016d847-f405-4511-8d4d-ade7102b599d" ConnectionType="Polyline" ConnectionPoints="1000;280;1000;240;1000;200;1000;160;1000;120;1000;80;1000;40;1000;0;1000;-40;1000;-80" IsModified="False" QN="0" />
+    <RadDiagramConnection Type="Telerik.Windows.Controls.RadDiagramConnection" Id="0824cad1-22e1-478f-ade9-3ccb10a13649" ZIndex="1" Position="760;-80" IsRotationEnabled="false" IsResizingEnabled="false" Stroke="#FF370060" StrokeThickness="2" Background="#FF7F51A1" BorderBrush="#FF370060" SourceConnectorPosition="Left" TargetConnectorPosition="Left" SourceCapType="Arrow6" TargetCapType="Arrow6" SourceCapSize="7;7" TargetCapSize="7;7" StartPoint="800;310" Source="5aab019d-3352-4ca2-9b5b-0ee36d460efd" EndPoint="800;-50" Target="1016d847-f405-4511-8d4d-ade7102b599d" ConnectionType="Polyline" ConnectionPoints="760;280;760;240;760;200;760;160;760;120;760;80;760;40;760;0;760;-40;760;-80" IsModified="False" QN="0" />
+  </Connections>
+</RadDiagram>

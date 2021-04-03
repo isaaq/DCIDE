@@ -77,7 +77,7 @@
                 <telerik:RadMenuItem Header="编辑" />
             </telerik:RadMenu>
             <telerik:RadDocking x:Name="radDocking1" RetainPaneSizeMode="DockingAndFloating"
-									Grid.Row="1" Margin="0 0 0 10"
+									Grid.Row="1" Margin="0 0 0 0"
 									BorderThickness="0"
 									Padding="0" Background="{StaticResource LightGrayBrush}">
 
@@ -99,18 +99,19 @@
                         <telerik:RadPane x:Name="Pane1" Header="网站对象">
                             <Main:UCFuncPane OnFuncChange="UCFuncPane_OnFuncChange"/>
                         </telerik:RadPane>
-                        <telerik:RadPane x:Name="Pane3" Header="菜单浏览器">
-                            <UC:UCMenuPane />
-                        </telerik:RadPane>
                     </telerik:RadPaneGroup>
                 </telerik:RadSplitContainer>
 
                 <telerik:RadSplitContainer MaxWidth="700" telerik:DockingPanel.InitialSize="400,150"
-                    x:Name="RightContainer" InitialPosition="DockedRight">
+                    x:Name="RightContainer" InitialPosition="DockedRight" Orientation="Vertical">
                     <telerik:RadPaneGroup x:Name="Group2">
 
                         <!-- Solution Explorer -->
-
+                        <telerik:RadPane x:Name="Pane3" Header="项目浏览器">
+                            <UC:UCMenuPane />
+                        </telerik:RadPane>
+                    </telerik:RadPaneGroup>
+                    <telerik:RadPaneGroup x:Name="GroupProp">
                         <!--Properties-->
                         <telerik:RadPane x:Name="Pane4" Header="属性">
                             <UC:UCPropertiesPane />

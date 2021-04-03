@@ -1,0 +1,29 @@
+﻿<telerik:RadWindow x:Class="DC.IDE.UI.UC.PageList.InsertFormWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DC.IDE.UI.UC.PageList"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" Header="添加表单"
+             d:DesignHeight="450" d:DesignWidth="800" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <ListView HorizontalAlignment="Stretch" VerticalAlignment="Top" ItemsSource="{Binding FormList}" SelectedItem="{Binding SelItem, Mode=TwoWay}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="5" HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <telerik:RadButton Click="RadButton_Click" Tag="{Binding Name}">
+                        <Grid>
+                            <Rectangle Fill="Red" Width="50" Height="50" />
+                            <TextBlock Text="{Binding Name}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+                        </Grid>
+                    </telerik:RadButton>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</telerik:RadWindow>

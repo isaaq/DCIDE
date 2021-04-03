@@ -8,7 +8,7 @@ using Telerik.Windows.Controls;
 
 namespace DC.IDE.UI.Diagram.Form.Shape
 {
-    interface IFormElementShape
+    interface IElementShape
     {
         RadDiagramShape CreateShape();
     }
