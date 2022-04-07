@@ -1,0 +1,87 @@
+﻿<UserControl xmlns:Layout="clr-namespace:DC.IDE.UI.UC.Layout"  x:Class="DC.IDE.UI.UC.UCCompany"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DC.IDE.UI.UC"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <telerik:RadLayoutControl Grid.Column="0" Orientation="Vertical" IsInEditMode="False">
+            <telerik:LayoutControlGroup Orientation="Vertical">
+                <telerik:LayoutControlExpanderGroup Margin="2" Header="企业信息">
+                    <telerik:LayoutControlGroup Orientation="Vertical">
+                        <telerik:LayoutControlGroup>
+                            <RadioButton Content="RadioButton 1" Padding="5" VerticalAlignment="Center" Margin="2" />
+                            <RadioButton Content="RadioButton 2" IsChecked="True" Padding="5" VerticalAlignment="Center" Margin="2" />
+                            <RadioButton Content="RadioButton 3" Padding="5" VerticalAlignment="Center" Margin="2" />
+                        </telerik:LayoutControlGroup>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="TextBlock:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                            <TextBox Grid.Column="1" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                        </Grid>
+                    </telerik:LayoutControlGroup>
+                </telerik:LayoutControlExpanderGroup>
+            </telerik:LayoutControlGroup>
+            <telerik:LayoutControlGroup Orientation="Vertical">
+                <telerik:LayoutControlExpanderGroup Margin="2" Header="设置管理">
+                    <telerik:LayoutControlGroup Orientation="Vertical">
+                        <Layout:LySettings />
+                    </telerik:LayoutControlGroup>
+                </telerik:LayoutControlExpanderGroup>
+            </telerik:LayoutControlGroup>
+        </telerik:RadLayoutControl>
+        <telerik:RadLayoutControl Grid.Column="1" Orientation="Vertical" IsInEditMode="False">
+            <telerik:LayoutControlGroup Orientation="Vertical">
+                <telerik:LayoutControlExpanderGroup Margin="2" Header="企业信息">
+                    <telerik:LayoutControlGroup Orientation="Vertical">
+                        <telerik:LayoutControlGroup>
+                            <RadioButton Content="RadioButton 1" Padding="5" VerticalAlignment="Center" Margin="2" />
+                            <RadioButton Content="RadioButton 2" IsChecked="True" Padding="5" VerticalAlignment="Center" Margin="2" />
+                            <RadioButton Content="RadioButton 3" Padding="5" VerticalAlignment="Center" Margin="2" />
+                        </telerik:LayoutControlGroup>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="TextBlock:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                            <TextBox Grid.Column="1" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                        </Grid>
+                    </telerik:LayoutControlGroup>
+                </telerik:LayoutControlExpanderGroup>
+            </telerik:LayoutControlGroup>
+            <telerik:LayoutControlGroup Orientation="Vertical">
+                <telerik:LayoutControlExpanderGroup Margin="2" Header="企业信息">
+                    <telerik:LayoutControlGroup Orientation="Vertical">
+                        <telerik:LayoutControlGroup>
+                            <RadioButton Content="RadioButton 1" Padding="5" VerticalAlignment="Center" Margin="2" />
+                            <RadioButton Content="RadioButton 2" IsChecked="True" Padding="5" VerticalAlignment="Center" Margin="2" />
+                            <RadioButton Content="RadioButton 3" Padding="5" VerticalAlignment="Center" Margin="2" />
+                        </telerik:LayoutControlGroup>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="TextBlock:" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                            <TextBox Grid.Column="1" Foreground="Black" VerticalAlignment="Center" Margin="5 0 5 0"/>
+                        </Grid>
+                    </telerik:LayoutControlGroup>
+                </telerik:LayoutControlExpanderGroup>
+            </telerik:LayoutControlGroup>
+        </telerik:RadLayoutControl>
+    </Grid>
+</UserControl>
