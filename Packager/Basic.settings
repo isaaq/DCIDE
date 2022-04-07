@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Packager" GeneratedClassName="Basic">
-  <Profiles />
-  <Settings>
-    <Setting Name="ExtName" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">cell</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>
