@@ -6,10 +6,15 @@
         xmlns:local="clr-namespace:DC.IDE.PackageBuilder"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:UC="clr-namespace:DC.IDE.PackageBuilder.UC" x:Class="DC.IDE.PackageBuilder.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1200">
     <Grid>
         <Grid.Resources>
-
+            <DataTemplate x:Key="CodeToolTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding}"/>
+                    <telerik:RadButton Margin="15,0,0,0" Content="高级"/>
+                </StackPanel>
+            </DataTemplate>
             <SolidColorBrush x:Key="LightGrayBrush" Color="#FFEFEFF2" />
             <SolidColorBrush x:Key="LightGrayBackgroundBrush" Color="#FFFFFFFF" />
             <SolidColorBrush x:Key="DarkGrayBrush" Color="#FF424242" />
@@ -75,25 +80,63 @@
 									BorderThickness="0"
 									Padding="0" Background="{StaticResource LightGrayBrush}">
             <telerik:RadDocking.DocumentHost>
-                <telerik:RadSplitContainer>
-                    <telerik:RadPaneGroup x:Name="dockMain">
-                        <telerik:RadPane Title="Home Page"/>
-
+                <telerik:RadSplitContainer Orientation="Vertical">
+                    <telerik:RadSplitContainer x:Name="ui">
+                        <telerik:RadSplitContainer  Orientation="Horizontal">
+                            <telerik:RadPaneGroup>
+                                <telerik:RadPane Title="Template" HeaderTemplate="{StaticResource CodeToolTemplate}">
+                                     <telerik:RadSyntaxEditor x:Name="codeTemplate" />
+                                </telerik:RadPane>
+                               
+                            </telerik:RadPaneGroup>
+                            <telerik:RadPaneGroup>
+                                <telerik:RadPane Title="Script" HeaderTemplate="{StaticResource CodeToolTemplate}">
+                                    <telerik:RadSyntaxEditor x:Name="scriptTemplate" />
+                                </telerik:RadPane>
+                            </telerik:RadPaneGroup>
+                            <telerik:RadPaneGroup>
+                                <telerik:RadPane Title="Style" HeaderTemplate="{StaticResource CodeToolTemplate}">
+                                    <telerik:RadSyntaxEditor x:Name="styleTemplate" />
+                                </telerik:RadPane>
+                            </telerik:RadPaneGroup>
+                        </telerik:RadSplitContainer>
+                    </telerik:RadSplitContainer>
+                    <telerik:RadPaneGroup x:Name="codebehind">
+                        <telerik:RadPane Title="CodeBehind" HeaderTemplate="{StaticResource CodeToolTemplate}">
+                            <telerik:RadSyntaxEditor x:Name="cbTemplate" />
+                        </telerik:RadPane>
                     </telerik:RadPaneGroup>
                 </telerik:RadSplitContainer>
             </telerik:RadDocking.DocumentHost>
 
             <telerik:RadSplitContainer  MaxWidth="600" telerik:DockingPanel.InitialSize="210,150"
-                    x:Name="LeftContainer" InitialPosition="DockedLeft">
+                    x:Name="RContainer" InitialPosition="DockedRight">
                 <telerik:RadPaneGroup x:Name="Group1">
                     <telerik:RadPane Header="项目结构">
-                        <UC:UCPkgStruct />
+                        <UC:UCPkgStruct Margin="0,4,0,-4" />
                     </telerik:RadPane>
                     <telerik:RadPane Header="页面结构"/>
                 </telerik:RadPaneGroup>
             </telerik:RadSplitContainer>
 
-
+            <telerik:RadSplitContainer  MaxWidth="600" telerik:DockingPanel.InitialSize="210,150"
+                    x:Name="LContainer" InitialPosition="DockedLeft">
+                <telerik:RadPaneGroup x:Name="Group2">
+                    <telerik:RadPane Header="工具栏">
+                        <StackPanel>
+                            <TextBox Height="25" />
+                            <telerik:RadTreeView>
+                                <telerik:RadTreeViewItem Header="Item 1" DefaultImageSrc=""/>
+                                <telerik:RadTreeViewItem Header="Item 2"/>
+                                <telerik:RadTreeViewItem Header="Item 3"/>
+                            </telerik:RadTreeView>
+                        </StackPanel>
+                    </telerik:RadPane>
+                    <telerik:RadPane Header="服务资源管理器">
+                    </telerik:RadPane>
+                    
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
         </telerik:RadDocking>
     </Grid>
 </Window>

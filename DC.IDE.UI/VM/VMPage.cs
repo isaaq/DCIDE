@@ -23,6 +23,7 @@ namespace DC.IDE.UI.VM
     {
         public ObservableCollection<PageItem> PageList { get; set; }
         public ObservableCollection<PageItem> MasterList { get; set; }
+        public ObservableCollection<PageItem> UCList { get; set; }
 
         public DelegateCommand SavePageCommand { get; set; }
         public DelegateCommand AddPageCommand { get; set; }
@@ -31,12 +32,14 @@ namespace DC.IDE.UI.VM
         public DelegateCommand FormCommand { get; set; }
 
         public PageItem SelItem { get; set; }
+        public string SelType { get; set; }
         public int CurrentPosition { get; internal set; }
 
         public VMPage()
         {
-            PageList = GetList("sys_pages", 0);
-            MasterList = GetList("sys_masterpages", 1);
+            PageList = GetList("sys_pages");
+            MasterList = GetList("sys_masterpages");
+            UCList = GetList("sys_usercontrols");
 
             SavePageCommand = new DelegateCommand(SavePage);
             AddPageCommand = new DelegateCommand(AddPage);
@@ -69,7 +72,7 @@ namespace DC.IDE.UI.VM
             if (result == MessageBoxResult.Yes)
             {
                 var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
-                var tblname = SelItem.Type == 0 ? "sys_pages" : "sys_masterpages";
+                var tblname = "sys_" + SelItem.Type;
                 var tbl = db.GetTable(tblname);
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", SelItem.Id);
                 var delresult = tbl.DeleteOne(filter);
@@ -77,8 +80,8 @@ namespace DC.IDE.UI.VM
                 {
                     CommonHelper.GetNotify().ShowSuccess("删除成功!");
 
-                    PageList = GetList("sys_pages", 0);
-                    MasterList = GetList("sys_masterpages", 1);
+                    PageList = GetList("sys_pages");
+                    MasterList = GetList("sys_masterpages");
                 }
                 else
                 {
@@ -90,7 +93,7 @@ namespace DC.IDE.UI.VM
         private void AddPage(object obj)
         {
             var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
-            var tblname = SelItem.Type == 0 ? "sys_pages" : "sys_masterpages";
+            var tblname = "sys_" + SelItem.Type;
             var tbl = db.GetTable(tblname);
             var document = new BsonDocument();
             document["title"] = SelItem.Title;
@@ -98,8 +101,9 @@ namespace DC.IDE.UI.VM
             tbl.InsertOne(document);
 
             Close();
-            PageList = GetList("sys_pages", 0);
-            MasterList = GetList("sys_masterpages", 1);
+            PageList = GetList("sys_pages");
+            MasterList = GetList("sys_masterpages");
+            UCList = GetList("sys_usercontrols");
         }
 
         private void SavePage(object obj)
@@ -107,7 +111,7 @@ namespace DC.IDE.UI.VM
             if (SelItem != null)
             {
                 var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
-                var tblname = SelItem.Type == 0 ? "sys_pages" : "sys_masterpages";
+                var tblname = "sys_" + SelItem.Type;
                 var tbl = db.GetTable(tblname);
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", SelItem.Id);
                 var update = Builders<BsonDocument>.Update.Set("title", SelItem.Title).Set("content", SelItem.Content);
@@ -123,12 +127,12 @@ namespace DC.IDE.UI.VM
             }
         }
 
-        private ObservableCollection<PageItem> GetList(string tblname, int type)
+        private ObservableCollection<PageItem> GetList(string tblname)
         {
             var m = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
             var t = m.GetTable(tblname);
             var all = t.FindAll();
-            var list = all.Select(s => new PageItem() { Id = s["_id"].AsObjectId, Content = s["content"].AsString, Title = s["title"].AsString, Type = type }).ToList();
+            var list = all.Select(s => new PageItem() { Id = s["_id"].AsObjectId, Content = s["content"].AsString, Title = s["title"].AsString, Type = tblname.Replace("sys_", "") }).ToList();
             return new ObservableCollection<PageItem>(list);
         }
 

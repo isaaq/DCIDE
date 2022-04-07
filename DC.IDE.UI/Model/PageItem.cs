@@ -15,7 +15,7 @@ namespace DC.IDE.UI.Model
         public string Title { get; set; }
         public ObjectId Id { get; set; }
         public string Content { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
         public string Category { get; set; }
     }
 }

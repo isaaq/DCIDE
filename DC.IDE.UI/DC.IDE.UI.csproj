@@ -347,6 +347,9 @@
     <Compile Include="UC\MenuPane\MenuPageBindWindow.xaml.cs">
       <DependentUpon>MenuPageBindWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC\ModelDesign\WinModelAdd.xaml.cs">
+      <DependentUpon>WinModelAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC\PageList\InsertFormWindow.xaml.cs">
       <DependentUpon>InsertFormWindow.xaml</DependentUpon>
     </Compile>
@@ -454,6 +457,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UC\MenuPane\MenuPageBindWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\ModelDesign\WinModelAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

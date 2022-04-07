@@ -18,10 +18,21 @@ namespace DC.IDE.PackageBuilder.VM
     public class VMMain : ViewModelBase
     {
         public ObservableCollection<PkgItem> PkgItemTree { get; set; }
+        public PkgItem TreeSelItem { get; set; }
+        public event EventHandler<PkgItem> OnTreeSelChanged;
 
         public VMMain()
         {
             GetPkgFileList();
+            this.PropertyChanged += VMMain_PropertyChanged;
+        }
+
+        private void VMMain_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName == "TreeSelItem")
+            {
+                OnTreeSelChanged(sender, TreeSelItem);
+            }
         }
 
         private void GetPkgFileList()
@@ -62,12 +73,12 @@ namespace DC.IDE.PackageBuilder.VM
 
                 foreach (string f in Directory.GetFiles(sDir))
                 {
-                    pkgItemTree.Add(new PkgItem() { Title = new FileInfo(f).Name });
+                    pkgItemTree.Add(new PkgItem() { Fullpath = f, Title = new FileInfo(f).Name });
                 }
 
                 foreach (string d in Directory.GetDirectories(sDir))
                 {
-                    var item = new PkgItem() { Title = new FileInfo(d).Name, Items = new ObservableCollection<PkgItem>() };
+                    var item = new PkgItem() { Fullpath = d, Title = new FileInfo(d).Name, Items = new ObservableCollection<PkgItem>() };
                     
                     DirSearch_ex3(d, item.Items);
                     pkgItemTree.Add(item);
@@ -77,6 +88,11 @@ namespace DC.IDE.PackageBuilder.VM
             {
                 Console.WriteLine(excpt.Message);
             }
+        }
+
+        public void OnPropVM(string name)
+        {
+            OnPropertyChanged(name);
         }
     }
 }

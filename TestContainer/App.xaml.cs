@@ -15,6 +15,7 @@ namespace TestContainer
     {
         public App()
         {
+            var company = ConfigurationManager.AppSettings["company"];
             App.Current.Properties["Company"] = "5e955138e90140719b3f719e";
         }
     }

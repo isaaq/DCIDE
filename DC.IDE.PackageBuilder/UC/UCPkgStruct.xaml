@@ -14,7 +14,7 @@
             </HierarchicalDataTemplate>
         </Grid.Resources>
         <telerik:RadTreeView ItemsSource="{Binding PkgItemTree}" ItemTemplate="{StaticResource TreeItemChildrenTemplate}" VerticalAlignment="Stretch"
-												 IsLineEnabled="True" IsDragDropEnabled="True" SelectionMode="Multiple">
+												 IsLineEnabled="True" IsDragDropEnabled="True" SelectionMode="Single" SelectedItem="{Binding TreeSelItem, Mode=TwoWay}" SelectionChanged="RadTreeView_SelectionChanged">
             <telerik:RadTreeView.Resources>
                 <Style TargetType="telerik:RadTreeViewItem" BasedOn="{StaticResource RadTreeViewItemStyle}">
                     <Setter Property="IsExpanded" Value="True" />

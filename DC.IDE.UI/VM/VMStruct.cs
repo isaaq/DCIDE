@@ -8,7 +8,10 @@ using System.Windows;
 
 using DC.IDE.UI.Model;
 using DC.IDE.UI.UC.Form;
+using DC.IDE.UI.UC.ModelDesign;
 using DC.IDE.UI.Util;
+
+using MongoDB.Bson;
 
 using PostSharp.Patterns.Model;
 
@@ -21,14 +24,36 @@ namespace DC.IDE.UI.VM
     {
         public ObservableCollection<StructItem> StructItems { get; set; }
         public DelegateCommand EditCommand { get; set; }
+        public DelegateCommand AddModelCommand { get; set; }
+
         public StructItem SelItem { get; set; }
+        public string WindowText { get; set; }
         private int _selId;
+        private WinModelAdd _winadd;
 
         public VMStruct()
         {
             StructItems = new ObservableCollection<StructItem>();
             EditCommand = new DelegateCommand(Edit);
+            AddModelCommand = new DelegateCommand(AddModel);
+
             BuildData(1);
+        }
+
+        private void AddModel(object obj)
+        {
+            _winadd = new WinModelAdd();
+            _winadd.DataContext = this;
+            _winadd.ShowDialog();
+            _winadd.Close();
+            var db = M.GetDB("dc_c_" + Application.Current.Properties["Company"]);
+            var tbldict = new List<string>() { "sys_models", "", "", "", "", "", "sys_lists", "", "" };
+            var tbl = db.GetTable(tbldict[_selId]);
+            var document = new BsonDocument();
+            document["name"] = WindowText;
+            document["content"] = "";
+            tbl.InsertOne(document);
+            BuildModel();
         }
 
         private void Edit(object obj)
@@ -36,12 +61,13 @@ namespace DC.IDE.UI.VM
             SelItem = (StructItem)obj;
             //_selId;
             RadWindow win = null;
-            switch(_selId)
+            switch (_selId)
             {
                 case 0:
-                     break;
+                    break;
+                case 6:
                 case 7: win = new WinFormDesigner(SelItem); break;
-                   
+
             }
             if (win != null)
             {
@@ -71,12 +97,33 @@ namespace DC.IDE.UI.VM
                     BuildForm(); break;
                 case 8:
                     BuildReport(); break;
+                //case 9:
+                //    BuildRaw(); break;
                 default:
                     BuildModel(); break;
             }
 
 
         }
+
+        //private void BuildRaw()
+        //{
+        //    var t = M.GetDB("dc_c_" + Application.Current.Properties["Company"]).GetTable("sys_forms");
+        //    var r = t.FindAll();
+        //    StructItems.Clear();
+        //    foreach (var i in r)
+        //    {
+        //        var item = new StructItem();
+        //        item.ID = i["_id"].AsObjectId;
+        //        item.Name = i["name"].ToString();
+
+        //        if (i.Contains("modifytime"))
+        //            item.ModifyTime = i["modifytime"].ToLocalTime();
+        //        if (i.Contains("description"))
+        //            item.Description = i["description"].ToString();
+        //        StructItems.Add(item);
+        //    }
+        //}
 
         private void BuildReport()
         {
@@ -88,7 +135,7 @@ namespace DC.IDE.UI.VM
             var t = M.GetDB("dc_c_" + Application.Current.Properties["Company"]).GetTable("sys_forms");
             var r = t.FindAll();
             StructItems.Clear();
-            foreach(var i in r)
+            foreach (var i in r)
             {
                 var item = new StructItem();
                 item.ID = i["_id"].AsObjectId;
@@ -123,7 +170,7 @@ namespace DC.IDE.UI.VM
 
         private void BuildModel()
         {
-            var t = M.GetDB("dc_c_" + Application.Current.Properties["Company"]).GetTable("sys_tables");
+            var t = M.GetDB("dc_c_" + Application.Current.Properties["Company"]).GetTable("sys_models");
             var r = t.FindAll();
             StructItems.Clear();
             foreach (var i in r)
@@ -131,12 +178,14 @@ namespace DC.IDE.UI.VM
                 var item = new StructItem();
                 item.ID = i["_id"].AsObjectId;
                 item.Name = i["name"].ToString();
-                item.Fields = i["attribute"].AsBsonArray;
+                if (i.Contains("attribute"))
+                    item.Fields = i["attribute"].AsBsonArray;
                 if (i.Contains("modifytime"))
                     item.ModifyTime = i["modifytime"].ToLocalTime();
                 if (i.Contains("type"))
                     item.Type = i["type"].ToString();
-                item.Description = i["description"].ToString();
+                if (i.Contains("description"))
+                    item.Description = i["description"].ToString();
                 StructItems.Add(item);
             }
         }

@@ -85,7 +85,8 @@ namespace DC.IDE.UI.VM
                 item.Children = tempcoll;
                 CategoryList.Add(item);
             }
-
+            // TODO 
+            //CategoryList.Add();
         }
 
         private PropModel BuildPropList()

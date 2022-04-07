@@ -17,7 +17,7 @@
                              GroupRenderMode="Flat"
 							 CanUserFreezeColumns="False"
 							 IsReadOnly="True"
-							 RowIndicatorVisibility="Collapsed" ItemsSource="{Binding StructItems}" Grid.ColumnSpan="2">
+							 RowIndicatorVisibility="Collapsed" ItemsSource="{Binding StructItems}" Margin="0,30,0,0">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding ID}"
 											Width="60" IsVisible="False"/>
@@ -59,7 +59,11 @@
                 <telerik:RadTreeViewItem Header="列表" Uid="6" />
                 <telerik:RadTreeViewItem Header="表单" Uid="7" />
                 <telerik:RadTreeViewItem Header="报表" Uid="8" />
+                <!--<telerik:RadTreeViewItem Header="Raw" Uid="9" />-->
             </telerik:RadTreeViewItem>
         </telerik:RadTreeView>
+        <telerik:RadToolBar Grid.Column="1" Height="30" VerticalAlignment="Top">
+            <telerik:RadMenuItem Header="添加 " Command="{Binding AddModelCommand}"/>
+        </telerik:RadToolBar>
     </Grid>
 </UserControl>

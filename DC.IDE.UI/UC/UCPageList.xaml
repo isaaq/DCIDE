@@ -23,6 +23,9 @@
             <telerik:RadTreeViewItem Header="母版页" IsExpanded="True" ItemsSource="{Binding MasterList}" DisplayMemberPath="Title">
 
             </telerik:RadTreeViewItem>
+            <telerik:RadTreeViewItem Header="用户控件" IsExpanded="True" ItemsSource="{Binding UCList}" DisplayMemberPath="Title">
+
+            </telerik:RadTreeViewItem>
         </telerik:RadTreeView>
         <TextBox x:Name="txtContent" Margin="180,191,10,28" VerticalContentAlignment="Top" Text="{Binding SelItem.Content, Converter={StaticResource cvbase64}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  AcceptsReturn="True" TextWrapping="Wrap" SelectionChanged="TextBox_SelectionChanged"/>
@@ -34,9 +37,11 @@
 						Icon="../Assets/Icons/icon_details.png">
                     <telerik:RadCollapsiblePanel>
                         <telerik:RadRibbonButton Size="Large" Text="添加页面" LargeImage="../Assets/Icons/icon_details.png"
-								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="page"/>
+								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="pages"/>
                         <telerik:RadRibbonButton Size="Large" Text="添加母版页" LargeImage="../Assets/Icons/icon_details.png"
-								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="masterpage" />
+								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="masterpages" />
+                        <telerik:RadRibbonButton Size="Large" Text="添加用户控件" LargeImage="../Assets/Icons/icon_details.png"
+								CollapseToSmall="WhenGroupIsMedium" Click="BtnAdd_Click" Tag="usercontrols" />
 
                         <!--telerik:ScreenTip.Title="Cut"
 								telerik:ScreenTip.Description="Cut the selection from the document and put it on the Clipboard."

@@ -5,6 +5,7 @@
              xmlns:page="clr-namespace:DC.IDE.UI.UC.PageList;assembly=DC.IDE.UI"
              xmlns:menu="clr-namespace:DC.IDE.UI.UC.MenuPane;assembly=DC.IDE.UI"
              xmlns:form="clr-namespace:DC.IDE.UI.UC.Form;assembly=DC.IDE.UI"
+             xmlns:modeldesign="clr-namespace:DC.IDE.UI.UC.ModelDesign;assembly=DC.IDE.UI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -30,6 +31,7 @@
             <Style TargetType="menu:MenuPageBindWindow" BasedOn="{StaticResource RadWindowStyle}" />
             <Style TargetType="form:WinFormDesigner" BasedOn="{StaticResource RadWindowStyle}" />
             <Style TargetType="page:WinPreview" BasedOn="{StaticResource RadWindowStyle}" />
+            <Style TargetType="modeldesign:WinModelAdd" BasedOn="{StaticResource RadWindowStyle}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

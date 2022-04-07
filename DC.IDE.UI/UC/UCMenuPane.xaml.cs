@@ -56,7 +56,7 @@ namespace DC.IDE.UI.UC
                 mi.Id = s["_id"].AsObjectId;
                 mi.Name = s["title"].AsString;
                 mi.Title = s["title"].AsString;
-                mi.Namespace = s["namespace"].AsString;
+                //mi.Namespace = s["namespace"].AsString;
                 if (s.Contains("url"))
                     mi.Url = s["url"].AsString;
                 mi.Children = GetList(s["_id"].ToString());

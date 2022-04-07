@@ -51,17 +51,13 @@ namespace DC.IDE.UI.UC
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (((RadRibbonButton)sender).Tag.ToString() == "page")
-            {
-                addwin = new WinPageAdd();
-                vmpage.SelItem = new PageItem();
-                addwin.DataContext = vmpage;
-                addwin.ShowDialog();
-            }
-            else
-            {
-
-            }
+            addwin = new WinPageAdd();
+            //var type = new List<string> { "pages", "masterpages", "usercontrols"};
+            var typestr = ((RadRibbonButton)sender).Tag.ToString();
+            vmpage.SelItem = new PageItem() { Type = typestr };
+            addwin.DataContext = vmpage;
+            addwin.ShowDialog();
+            
         }
 
         private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
